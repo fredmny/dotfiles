@@ -100,7 +100,10 @@ keys = [
     Key(
         [], "XF86AudioMute",
         lazy.spawn("amixer -c 0 -q set Master toggle")
-    )
+    ),
+    # Change screen brightness
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
 ]
 
 # Default Layout Variable
@@ -114,7 +117,7 @@ group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout}), 
            ("  ",{'layout': def_layout}),
            (" 6 ",{'layout': def_layout}),
-           (" 7 ",{'layout': def_layout}),
+           ("  ",{'layout': def_layout, 'spawn':'keepassxc'}),
            ("  ",{'layout': def_layout, 'spawn':'telegram-desktop'}),
            ("  ",{'layout': def_layout, 'spawn':'spotify'})]
 

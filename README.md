@@ -11,7 +11,7 @@ These are the configuration files for my Arch Linux installation
 - **Shell:** zsh (+oh\_my\_zsh)
 - **File Manager:** Ranger (with ueberzug to visualize images)
 - **Audio Player:** Spotify - controlled through spotify-tui
-- **System Monitorin Dashboard:** gtop
+- **System Monitoring Dashboard:** gtop
 
 ## Colors
 I am using *pywal* to control the colors of my terminal (main functionality of pywal) as well as of my window manager. 
