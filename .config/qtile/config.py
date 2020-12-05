@@ -31,6 +31,10 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+# Load script to read colors from pywal
+import pywal_colors
+colors = pywal_colors.colors
+
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -130,7 +134,7 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 ##### DEFAULT THEME SETTINGS FOR LAYOUTS #####
 layout_theme = {"border_width": 2,
                 "margin": 5,
-                "border_focus": "439c9a",
+                "border_focus": colors[7],
                 "border_normal": "1D2330"
                 }
 
@@ -164,10 +168,6 @@ layouts = [
 #         "102123",       # Widget 6 Color
 
 #         ]
-
-# Load script to read colors from pywal
-import pywal_colors
-colors = pywal_colors.colors
 
 # Define the foreground (text) color
 fgcolor = colors[0]
