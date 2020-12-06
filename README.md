@@ -18,6 +18,9 @@ I am using *pywal* to control the colors of my terminal (main functionality of p
 
 To change the colors of the window manager I wrote a short *Python* script, that loads the pywal cached color scheme into a list, which is then used in my Qtile configuration file. If you are interested you can find the script [here](https://github.com/fredmny/dotfiles/blob/master/.config/qtile/pywal_colors.py). 
 
+## Wallpaper
+The wallpapers for the first and third screenshot are in the wallpaper folder. Both wallpapers I got from a collection from [Luke Smith](https://lukesmith.xyz/), that I downloaded some years ago. I will upload the wallpaper of the second screenshot as soon as I find it.
+
 ## How I manage my Dotfiles Repository
 I manage my dotfiles with a bare git repository and would engourage you to do the same. Just check following links (I recommend watching the video from Derek Taylor/DistroTube for better understanding):
 - [Original Article](https://www.atlassian.com/git/tutorials/dotfiles)
