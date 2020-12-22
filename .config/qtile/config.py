@@ -120,8 +120,8 @@ group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout,'spawn':'firefox'}),
            ("  ",{'layout': def_layout}), 
            ("  ",{'layout': def_layout}),
-           (" 6 ",{'layout': def_layout}),
            ("  ",{'layout': def_layout, 'spawn':'keepassxc'}),
+           ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout, 'spawn':'telegram-desktop'}),
            ("  ",{'layout': def_layout, 'spawn':'spotify'})]
 
