@@ -259,11 +259,13 @@ screens = [
             [
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Pacman(
-                    fmt = ' : {}',
+                widget.CheckUpdates(
+                    distro = 'Arch',
+                    fmt = ' - {}',
                     background = colors[5],
                     foreground = fgcolor,
                     padding = 9,
+                    no_update_string = ' : N/A'
                     ),
                 widget.Pomodoro(
                     background = colors[6],
@@ -362,11 +364,13 @@ screens = [
             [
                 widget.Prompt(),
                 widget.WindowName(),
-                widget.Pacman(
-                    fmt = ' : {}',
+                widget.CheckUpdates(
+                    distro = 'Arch',
+                    fmt = ' - {}',
                     background = colors[5],
                     foreground = fgcolor,
                     padding = 9,
+                    no_update_string = ' : N/A' 
                     ),
                 widget.Pomodoro(
                     background = colors[6],
