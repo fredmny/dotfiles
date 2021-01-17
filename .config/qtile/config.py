@@ -108,7 +108,13 @@ keys = [
     # Change screen brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
+
+    # Keyboard Shortcuts to start applications
+    Key([mod], "v", lazy.spawn("code")),
+
 ]
+
+
 
 # Default Layout Variable
 def_layout = "bsp"

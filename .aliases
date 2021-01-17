@@ -7,3 +7,4 @@ alias ydl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/be
 alias xo=xdg-open
 alias config='/usr/bin/git --git-dir=/home/prophet/dotfiles --work-tree=/home/prophet'
 alias qconf='vim ~/.config/qtile/config.py'
+alias wifi='sudo wifi-menu'
