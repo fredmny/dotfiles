@@ -8,3 +8,6 @@ alias xo=xdg-open
 alias config='/usr/bin/git --git-dir=/home/prophet/dotfiles --work-tree=/home/prophet'
 alias qconf='vim ~/.config/qtile/config.py'
 alias wifi='sudo wifi-menu'
+alias atomic='~/AppImage/atomicwallet.AppImage'
+alias spot='systemctl --user start spotifyd.service & spt'
+alias bitwarden='~/AppImage/Bitwarden.AppImage'
