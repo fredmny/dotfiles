@@ -35,7 +35,7 @@ from libqtile.utils import guess_terminal
 import pywal_colors
 colors = pywal_colors.colors
 
-mod = "mod4"
+mod = "mod1"
 terminal = guess_terminal()
 
 keys = [
@@ -77,10 +77,10 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
-    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
-    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
-    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
-    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod4"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod4"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod4"], "h", lazy.layout.flip_left()),
+    Key([mod, "mod4"], "l", lazy.layout.flip_right()),
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
     Key([mod, "control"], "h", lazy.layout.grow_left()),

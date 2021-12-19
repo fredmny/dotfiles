@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/prophet/wallpaper/set/walkbp.jpg",
+    "wallpaper": "/home/prophet/wallpaper/luke_smith/Landscapes/1490589082750.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#0C1031",
-        "foreground": "#c2c5c7",
-        "cursor": "#c2c5c7"
+        "background": "#190f0d",
+        "foreground": "#f4cd9c",
+        "cursor": "#f4cd9c"
     },
     "colors": {
-        "color0": "#0C1031",
-        "color1": "#163D81",
-        "color2": "#2F5E8A",
-        "color3": "#54688D",
-        "color4": "#B37A89",
-        "color5": "#34899F",
-        "color6": "#66939A",
-        "color7": "#c2c5c7",
-        "color8": "#87898b",
-        "color9": "#163D81",
-        "color10": "#2F5E8A",
-        "color11": "#54688D",
-        "color12": "#B37A89",
-        "color13": "#34899F",
-        "color14": "#66939A",
-        "color15": "#c2c5c7"
+        "color0": "#190f0d",
+        "color1": "#3D4863",
+        "color2": "#5F4D60",
+        "color3": "#BE3B39",
+        "color4": "#96354B",
+        "color5": "#995261",
+        "color6": "#E16459",
+        "color7": "#f4cd9c",
+        "color8": "#aa8f6d",
+        "color9": "#3D4863",
+        "color10": "#5F4D60",
+        "color11": "#BE3B39",
+        "color12": "#96354B",
+        "color13": "#995261",
+        "color14": "#E16459",
+        "color15": "#f4cd9c"
     }
 }
