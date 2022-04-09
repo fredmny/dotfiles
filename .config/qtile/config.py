@@ -126,7 +126,7 @@ group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout,'spawn':'firefox'}),
            ("  ",{'layout': def_layout}), 
            ("  ",{'layout': def_layout}),
-           ("  ",{'layout': def_layout, 'spawn':'keepassxc'}),
+           ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout, 'spawn':'telegram-desktop'}),
            ("  ",{'layout': def_layout, 'spawn':'spotify'})]
@@ -414,23 +414,11 @@ main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-])
+#floating_layout = layout.Floating(float_rules=[
+#    # Run the utility of `xprop` to see the wm class and name of an X client.
+#    *layout.Floating.default_float_rules,
+#    Match(title = 'Qalculate!')
+#    ]) 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
