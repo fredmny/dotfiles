@@ -52,6 +52,7 @@ setxkbmap -layout us -variant intl
 picom &
 ~/.fehbg &
 ./.screenlayout/standard.sh &
+pcmanfm -d &
 qtile start
 
 

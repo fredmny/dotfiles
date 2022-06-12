@@ -9,9 +9,11 @@ These are the configuration files for my Arch Linux installation
 ## Used Applications
 - **Window Manager:** Qtile 
 - **Shell:** zsh (+oh\_my\_zsh)
-- **File Manager:** Ranger (with ueberzug to visualize images)
+- **TUI File Manager:** Ranger (with ueberzug to visualize images)
+- **GUI File Manager:** pcmanfm
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
+- **GTK Appearance Management:** lxappearance
 
 ## Colors
 I am using *pywal* to control the colors of my terminal (main functionality of pywal) as well as of my window manager. 
