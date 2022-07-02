@@ -14,6 +14,8 @@ These are the configuration files for my Arch Linux installation
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
 - **GTK Appearance Management:** lxappearance
+- **Browser:** qutebrowser
+- **Video Player:** mpv
 
 ## Colors
 I am using *pywal* to control the colors of my terminal (main functionality of pywal) as well as of my window manager. 
