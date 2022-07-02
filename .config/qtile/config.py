@@ -111,7 +111,7 @@ keys = [
 
     # Keyboard Shortcuts to start applications
     Key([mod], "v", lazy.spawn("code")),
-
+    Key([mod], "q", lazy.spawn("qutebrowser")),
 ]
 
 
