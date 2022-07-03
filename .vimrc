@@ -62,4 +62,5 @@ endif
 
 " Own options
 syntax on
-set relativenumber
+set number relativenumber
+set wildmenu "Display all matches when tab complete
