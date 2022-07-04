@@ -17,6 +17,12 @@ These are the configuration files for my Arch Linux installation
 - **Browser:** qutebrowser
 - **Video Player:** mpv
 
+## Media Shortcuts
+Media shortcuts working:
+- **Increase/decrease screen brightness**
+- **Increase/decrease volume**
+- **Control spt (TUI Spotify player):** Play/pause, next song, previous song
+
 ## Colors
 I am using *pywal* to control the colors of my terminal (main functionality of pywal) as well as of my window manager. 
 
