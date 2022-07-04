@@ -126,17 +126,26 @@ keys = [
     ),
 
     # Change screen brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
+    Key(
+        [], "XF86MonBrightnessUp", 
+        lazy.spawn("xbacklight -inc 10")
+    ),
+
+    Key(
+        [], "XF86MonBrightnessDown", 
+        lazy.spawn("xbacklight -dec 10")
+    ),
 
     # Keyboard Shortcuts to start applications
     Key([mod], "v", lazy.spawn("code")),
     Key([mod], "q", lazy.spawn("qutebrowser")),
 
+    # Control floating windows
     Key([mod], "f", lazy.window.toggle_floating(), desc='toggle floating'),
     Key([mod], "p", 
         lazy.window.set_size_floating(448, 252),
-        lazy.window.set_position_floating(1920+1920-448-10, 1080-252-40)
+        lazy.window.set_position_floating(1920+1920-448-10, 1080-252-40),
+        desc='Set position for video player floating window'
     ),
 ]
 
