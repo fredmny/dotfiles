@@ -105,6 +105,26 @@ keys = [
         [], "XF86AudioMute",
         lazy.spawn("amixer -c 0 -q set Master toggle")
     ),
+
+    # Commands to control spt spotify player
+    Key(
+        [], "XF86AudioPlay",
+        lazy.spawn("spt playback -t"),
+        desc='Play/pause music on spt (Spotify)'
+    ),
+
+    Key(
+        [], "XF86AudioPrev",
+        lazy.spawn("spt playback -p"),
+        desc='Play previous song on spt (Spotify)'
+    ),
+
+    Key(
+        [], "XF86AudioNext",
+        lazy.spawn("spt playback -n"),
+        desc='Play next song on spt (Spotify)'
+    ),
+
     # Change screen brightness
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 10")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 10")),
