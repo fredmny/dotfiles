@@ -2,7 +2,7 @@
 
 dbtDir="dbt"
 dbtFile=$1
-compileDir="models/compile"
+compileDir="target/compiled/"
 
 if [ -z "$1" ]
     then
@@ -10,9 +10,10 @@ if [ -z "$1" ]
         read dbtFile
 fi
 
-poetry shell
+cd $HOME/$dbtDir
+# poetry shell
 dbt compile -s $dbtFile
-compiledFile="$HOME/$dbtDir/$compileDir/$dbtFile.sql"
+compiledFile=$(find $HOME/$dbtDir/$compileDir -name "$dbtFile.*")
 
 # TODO: add confetti from raycast
 
@@ -20,9 +21,8 @@ if [ -f "$compiledFile" ]
     then
         echo "Press enter to copy $compiledFile content to clipboard"
         read input
-        # cat $compiledFile > pbcopy
+        cat $compiledFile | pbcopy
         echo "Model $dbtFile copied to clipboard"
     else
         echo "File $compiledFile not found"
 fi
-
