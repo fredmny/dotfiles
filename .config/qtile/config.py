@@ -112,9 +112,13 @@ keys = [
     # Keyboard Shortcuts to start applications
     Key([mod], "v", lazy.spawn("code")),
     Key([mod], "q", lazy.spawn("qutebrowser")),
+
+    Key([mod], "f", lazy.window.toggle_floating(), desc='toggle floating'),
+    Key([mod], "p", 
+        lazy.window.set_size_floating(448, 252),
+        lazy.window.set_position_floating(1920+1920-448-10, 1080-252-40)
+    ),
 ]
-
-
 
 # Default Layout Variable
 def_layout = "bsp"
