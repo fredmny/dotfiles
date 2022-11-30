@@ -67,7 +67,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git vscode
+  git vscode poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,5 +126,14 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+. /opt/asdf-vm/asdf.sh
+
+autoload -Uz compinit
+compinit
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+export PATH="/home/prophet/.local/bin:$PATH"

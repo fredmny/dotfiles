@@ -1,4 +1,29 @@
 {
+    "workbench.colorTheme": "Horizon Extended",
+    "files.associations": {
+        "*.sql": "jinja-sql"
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.shell.osx": "/bin/zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
-    "security.workspace.trust.untrustedFiles": "open"
+    "editor.formatOnType": true,
+    "editor.minimap.enabled": false,
+    "editor.largeFileOptimizations": false,
+    "editor.renderWhitespace": "all",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.tabSize": 2,
+    "githubPullRequests.createOnPublishBranch": "never",
+    "editor.guides.bracketPairs": true,
+    "databricks.connection.default.apiRootUrl": "https://dbc-da926df9-ab65.cloud.databricks.com/",
+    "databricks.connection.default.displayName": "databricks_loft",
+    "databricks.connection.default.localSyncFolder": "~/databricks",
+    "databricks.lastActiveConnection": "databricks_loft",
+    "databricks.connection.default.personalAccessTokenSecure": {
+        "keyTarSettingName": "databricks_loft-API-Token"
+    },
+    "aws.profile": "profile:default",
+    "[python]": {
+        "editor.rulers": [79]
+    },
+    "window.zoomLevel": 1
 }

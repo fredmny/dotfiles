@@ -9,6 +9,14 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
+" Vim plugins
+call plug#begin('$HOME/.vim/plugged')
+
+Plug 'itchyny/lightline.vim'
+Plug 'vifm/vifm.vim'
+
+call plug#end()
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -64,3 +72,6 @@ endif
 syntax on
 set number relativenumber
 set wildmenu "Display all matches when tab complete
+" For lightline to work
+set laststatus=2
+let g:lightline = {'colorscheme': 'wombat'}
