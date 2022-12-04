@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/prophet/wallpaper/set/wallpaper.jpg",
+    "wallpaper": "/home/prophet/wallpaper/lotr_child.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#08060C",
-        "foreground": "#afbfe0",
-        "cursor": "#afbfe0"
+        "background": "#040405",
+        "foreground": "#c3c9c3",
+        "cursor": "#c3c9c3"
     },
     "colors": {
-        "color0": "#08060C",
-        "color1": "#9D3B5E",
-        "color2": "#974974",
-        "color3": "#40489C",
-        "color4": "#605099",
-        "color5": "#A35E96",
-        "color6": "#CB6FA5",
-        "color7": "#afbfe0",
-        "color8": "#7a859c",
-        "color9": "#9D3B5E",
-        "color10": "#974974",
-        "color11": "#40489C",
-        "color12": "#605099",
-        "color13": "#A35E96",
-        "color14": "#CB6FA5",
-        "color15": "#afbfe0"
+        "color0": "#040405",
+        "color1": "#5B5F5B",
+        "color2": "#9B554B",
+        "color3": "#6E8B6A",
+        "color4": "#AAA765",
+        "color5": "#5D758B",
+        "color6": "#709996",
+        "color7": "#c3c9c3",
+        "color8": "#888c88",
+        "color9": "#5B5F5B",
+        "color10": "#9B554B",
+        "color11": "#6E8B6A",
+        "color12": "#AAA765",
+        "color13": "#5D758B",
+        "color14": "#709996",
+        "color15": "#c3c9c3"
     }
 }

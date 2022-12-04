@@ -15,3 +15,6 @@ alias screenadjust='~/.screenlayout/standard.sh'
 alias screenrotate='~/.screenlayout/rotated.sh'
 alias uskmap='setxkbmap -layout us -variant intl'
 alias dbtcomp='$HOME/.scripts/dbt_compile.sh'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
