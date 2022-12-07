@@ -16,6 +16,7 @@ These are the configuration files for my Arch Linux installation
 - **GTK Appearance Management:** lxappearance
 - **Browser:** qutebrowser
 - **Video Player:** mpv
+- **Vim Plugin Manager:** [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## Media Shortcuts
 Media shortcuts working:
