@@ -17,6 +17,7 @@ These are the configuration files for my Arch Linux installation
 - **Browser:** qutebrowser
 - **Video Player:** mpv
 - **Vim Plugin Manager:** [vim-plug](https://github.com/junegunn/vim-plug)
+- **Screenshot tool:** [flameshot](https://flameshot.org/)
 
 ## Media Shortcuts
 Media shortcuts working:
