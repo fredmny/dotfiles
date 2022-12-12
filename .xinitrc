@@ -52,8 +52,5 @@ setxkbmap -layout us -variant intl
 picom &
 ~/.fehbg &
 ./.screenlayout/standard.sh &
-pcmanfm -d &
+flameshot &
 qtile start
-
-
-
