@@ -110,20 +110,20 @@ fi
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
-
+#
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/prophet/usb/programs/anaconda3-linux/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/prophet/usb/programs/anaconda3-linux/etc/profile.d/conda.sh" ]; then
-        . "/home/prophet/usb/programs/anaconda3-linux/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/prophet/usb/programs/anaconda3-linux/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/prophet/usb/programs/anaconda3-linux/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/prophet/usb/programs/anaconda3-linux/etc/profile.d/conda.sh" ]; then
+#        . "/home/prophet/usb/programs/anaconda3-linux/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/prophet/usb/programs/anaconda3-linux/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
 # <<< conda initialize <<<
 
 . /opt/asdf-vm/asdf.sh
@@ -137,3 +137,6 @@ compinit
 
 
 export PATH="/home/prophet/.local/bin:$PATH"
+
+# Show colorful script
+colorscript --random

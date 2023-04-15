@@ -10,16 +10,20 @@ These are the configuration files for my Arch Linux installation
 - **Window Manager:** Qtile 
 - **Shell:** zsh (+oh\_my\_zsh)
 - **TUI File Manager:** Ranger (with ueberzug to visualize images)
-- **GUI File Manager:** pcmanfm
+- **GUI File Manager:** pcmanfm / vifm
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
 - **GTK Appearance Management:** lxappearance
-- **Browser:** qutebrowser
+- **Browser:** firefox / qutebrowser
 - **Video Player:** mpv
 - **Vim Plugin Manager:** [vim-plug](https://github.com/junegunn/vim-plug)
 - **Screenshot tool:** [flameshot](https://flameshot.org/)
 - **Audo Engine:** [Pipewire](https://pipewire.org/) with [EasyEffects](https://github.com/wwmm/easyeffects) to control it
 - **Launcher:** [rofi](https://github.com/davatorium/rofi)
+- **IDE:** Visual Studio Code
+
+### Other Scripts and Tools
+- [Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts)
 
 ## Media Shortcuts
 Media shortcuts working:
