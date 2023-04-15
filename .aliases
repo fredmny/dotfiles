@@ -1,6 +1,6 @@
 alias ..="cd .."
-alias ll="ls -l --color"
-alias la="ls -la --color"
+alias ll="ls -lh --color"
+alias la="ls -lah --color"
 alias sdnow="shutdown now"
 alias ees="wine ~/apps/EES/ees.exe > /dev/null 2>&1 &"
 alias ydl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
@@ -17,4 +17,4 @@ alias uskmap='setxkbmap -layout us -variant intl'
 alias dbtcomp='$HOME/.scripts/dbt_compile.sh'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
-
+alias dnet='nmcli device disconnect wlan0 && nmtui'

@@ -21,7 +21,6 @@
     "databricks.connection.default.personalAccessTokenSecure": {
         "keyTarSettingName": "databricks_loft-API-Token"
     },
-    "aws.profile": "profile:default",
     "[python]": {
         "editor.rulers": [79]
     },

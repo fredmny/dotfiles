@@ -18,6 +18,8 @@ These are the configuration files for my Arch Linux installation
 - **Video Player:** mpv
 - **Vim Plugin Manager:** [vim-plug](https://github.com/junegunn/vim-plug)
 - **Screenshot tool:** [flameshot](https://flameshot.org/)
+- **Audo Engine:** [Pipewire](https://pipewire.org/) with [EasyEffects](https://github.com/wwmm/easyeffects) to control it
+- **Launcher:** [rofi](https://github.com/davatorium/rofi)
 
 ## Media Shortcuts
 Media shortcuts working:

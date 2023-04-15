@@ -67,6 +67,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
+    Key(["mod4"], "space", lazy.spawn("rofi -show run")),
 
     ### Custom Keybinds for bsp layout ###
     Key([mod], "j", lazy.layout.down()),
@@ -160,9 +161,9 @@ group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout, 'spawn':'notion-app'}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout,'spawn':'bitwarden-desktop'}),
-           ("  ",{'layout': def_layout}),
+           ("  ",{'layout': def_layout, 'spawn': 'obsidian'}),
            ("  ",{'layout': def_layout, 'spawn':'telegram-desktop'}),
-           ("  ",{'layout': def_layout, 'spawn':'spotify'})]
+           ("  ",{'layout': def_layout, 'spawn':'spotify-launcher'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
