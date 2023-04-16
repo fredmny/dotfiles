@@ -26,8 +26,9 @@
 
 from typing import List  # noqa: F401
 
-from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Screen
+import os
+from libqtile import bar, layout, widget, qtile
+from libqtile.config import Click, Drag, Group, Key, Screen, KeyChord
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -48,7 +49,7 @@ keys = [
     #Key([mod, "control"], "j", lazy.layout.shuffle_up()),
 
     # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next()),
+    # Key([mod], "space", lazy.layout.next()),
 
     # Swap panes of split stack
     Key([mod, "shift"], "space", lazy.layout.rotate()),
@@ -148,6 +149,15 @@ keys = [
         lazy.window.set_position_floating(1920+1920-448-10, 1080-252-40),
         desc='Set position for video player floating window'
     ),
+
+    # Launchpad for rofi scripts using ctrl+space followed by 'key'
+    KeyChord([mod], "space", [
+        Key([], "f",
+            # The `os.path.expanduser` is necessary to identify `~` as the $HOME path
+            lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/rofi-fontawesome")),
+            desc="Select font-awesome icon"
+            ),
+        ])
 ]
 
 # Default Layout Variable

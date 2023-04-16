@@ -22,7 +22,11 @@
         "keyTarSettingName": "databricks_loft-API-Token"
     },
     "[python]": {
-        "editor.rulers": [79]
+        "editor.rulers": [
+            79
+        ],
+        "editor.formatOnType": true
     },
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "security.workspace.trust.untrustedFiles": "open"
 }
