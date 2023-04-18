@@ -68,7 +68,7 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
-    Key(["mod4"], "space", lazy.spawn("rofi -show run")),
+    Key(["mod4"], "space", lazy.spawn("rofi -show drun")),
 
     ### Custom Keybinds for bsp layout ###
     Key([mod], "j", lazy.layout.down()),
@@ -156,6 +156,14 @@ keys = [
             # The `os.path.expanduser` is necessary to identify `~` as the $HOME path
             lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/rofi-fontawesome")),
             desc="Select font-awesome icon"
+            ),
+        Key([], "e",
+            lazy.spawn("rofi -show emoji -modi emoji"),
+            desc="Emoji Selector"
+            ),
+        Key([], "c",
+            lazy.spawn("rofi -show calc -modi calc -no-show-match -no-sort"),
+            desc="Calculator"
             ),
         ])
 ]
