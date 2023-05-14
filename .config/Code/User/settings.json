@@ -27,6 +27,6 @@
         ],
         "editor.formatOnType": true
     },
-    "window.zoomLevel": 1,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 1
 }

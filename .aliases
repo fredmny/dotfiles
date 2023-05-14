@@ -4,7 +4,7 @@ alias la="ls -lah --color"
 alias sdnow="shutdown now"
 alias ees="wine ~/apps/EES/ees.exe > /dev/null 2>&1 &"
 alias ydl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best'"
-alias xo=xdg-open
+alias xo='xdg-open'
 alias config='/usr/bin/git --git-dir=/home/prophet/dotfiles --work-tree=/home/prophet'
 alias qconf='vim ~/.config/qtile/config.py'
 alias wifi='sudo wifi-menu'
