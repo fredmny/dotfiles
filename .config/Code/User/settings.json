@@ -1,32 +1,75 @@
 {
-    "workbench.colorTheme": "Horizon Extended",
-    "files.associations": {
-        "*.sql": "jinja-sql"
-    },
-    "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "editor.formatOnType": true,
-    "editor.minimap.enabled": false,
-    "editor.largeFileOptimizations": false,
-    "editor.renderWhitespace": "all",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.tabSize": 2,
-    "githubPullRequests.createOnPublishBranch": "never",
-    "editor.guides.bracketPairs": true,
-    "databricks.connection.default.apiRootUrl": "https://dbc-da926df9-ab65.cloud.databricks.com/",
-    "databricks.connection.default.displayName": "databricks_loft",
-    "databricks.connection.default.localSyncFolder": "~/databricks",
-    "databricks.lastActiveConnection": "databricks_loft",
-    "databricks.connection.default.personalAccessTokenSecure": {
-        "keyTarSettingName": "databricks_loft-API-Token"
-    },
-    "[python]": {
-        "editor.rulers": [
-            79
-        ],
-        "editor.formatOnType": true
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 1
+  "databricks.connection.default.apiRootUrl": "https://dbc-da926df9-ab65.cloud.databricks.com/",
+  "databricks.connection.default.displayName": "databricks_loft",
+  "databricks.connection.default.localSyncFolder": "~/databricks",
+  "databricks.connection.default.personalAccessTokenSecure": {
+    "keyTarSettingName": "databricks_loft-API-Token"
+  },
+  "databricks.lastActiveConnection": "databricks_loft",
+  "editor.accessibilitySupport": "off",
+  "editor.formatOnType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "files.associations": {
+    "*.sql": "jinja-sql"
+  },
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.pushBranch": "always",
+  "jupyter.askForKernelRestart": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "workbench.colorTheme": "Horizon Extended",
+"window.zoomLevel": 1,
+"redhat.telemetry.enabled": false,
+  "githubPullRequests.pullBranch": "never",
+  "editor.rulers": [
+    79
+  ],
+  "[jinja-sql]": {
+    "editor.tabSize": 2
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "dbt.versionCheck": "status bar",
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "block",
+  // "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "editor.lineNumbersInterval": 5,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ]
 }
