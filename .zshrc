@@ -73,8 +73,10 @@ plugins=(
   colored-man-pages 
   zsh-autosuggestions 
   zsh-syntax-highlighting 
-  copyfile
+  copyfile # copy contents of file
+  copybuffer # copy what's typed in the command line with Ctrl+O
 )
+bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
