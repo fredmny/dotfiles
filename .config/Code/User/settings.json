@@ -71,5 +71,8 @@
     "!Select sequence",
     "!Split",
     "!Split sequence"
-  ]
+  ],
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }
