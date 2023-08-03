@@ -21,3 +21,34 @@ alias dnet='nmcli device disconnect wlan0 && nmtui'
 alias gobs='cd $HOME/obsidian_personal && ga . && gcam "vault backup"; ggpull; ggpush && cd -'
 alias vf='vifm .'
 alias ez='exec zsh'
+
+
+## functions
+mcd () {
+    mkdir -p $1
+    cd $1
+}
+
+gcfix () {
+	message="$@"
+	complete_message="fix: $message"
+	gcam  "$complete_message"
+}
+
+gcfeat () {
+	message="$@"
+	complete_message="feat: $message"
+	gcam  "$complete_message"
+}
+
+gcchore () {
+	message="$@"
+	complete_message="chore: $message"
+	gcam  "$complete_message"
+}
+
+gcdocs () {
+	message="$@"
+	complete_message="docs: $message"
+	gcam  "$complete_message"
+}
