@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/prophet/wallpaper/lotr_child.jpg' 
+feh --no-fehbg --bg-max '/home/prophet/wallpaper/lotr_child.jpg' 
