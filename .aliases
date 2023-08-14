@@ -22,7 +22,8 @@ alias gobs='cd $HOME/obsidian_personal && ga . && gcam "vault backup"; ggpull; g
 alias vf='vifm .'
 alias ez='exec zsh'
 alias tls='tmux ls'
-alias cl='clear'
+alias c='clear'
+alias tm='~/scripts/tmux_personal_session.sh'
 
 ## functions
 mcd () {
