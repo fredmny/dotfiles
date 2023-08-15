@@ -24,6 +24,8 @@ alias ez='exec zsh'
 alias tls='tmux ls'
 alias c='clear'
 alias tm='~/scripts/tmux_personal_session.sh'
+alias tmw='~/scripts/tmux-session.sh'
+
 
 ## functions
 mcd () {
@@ -53,4 +55,18 @@ gcdocs () {
 	message="$@"
 	complete_message="docs: $message"
 	gcam  "$complete_message"
+}
+
+gbb () {
+	branch="$(git branch --show-current)"
+	config_message="{ \"branch\": \"$branch\" }"
+	
+	echo $config_message | pbcopy
+
+	echo "Airflow dag config param copied to clipboard"
+}
+
+gcba () {
+	issue_number=$1
+	gcb AMERDATAN-$issue_number
 }
