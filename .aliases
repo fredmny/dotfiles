@@ -25,6 +25,7 @@ alias tls='tmux ls'
 alias c='clear'
 alias tm='~/scripts/tmux_personal_session.sh'
 alias tmw='~/scripts/tmux-session.sh'
+alias loga='aws sso login --profile IAM-ANALYTICS'
 
 
 ## functions
