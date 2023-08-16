@@ -1,4 +1,6 @@
 require("core.settings")
 require("core.keymaps")
-require("core.plugins")
-require("core.plugin_config")
+if not vim.g.vscode then
+  require("core.plugins")
+  require("core.plugin_config")
+end
