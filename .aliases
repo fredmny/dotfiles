@@ -29,6 +29,7 @@ alias tmkill='tmux kill-session'
 alias loga='aws sso login --profile IAM-ANALYTICS'
 alias vi='nvim'
 alias nvconf='nvim ~/.config/nvim/'
+alias gdn='gd --name-status'
 
 ## functions
 mcd () {
