@@ -180,7 +180,7 @@ group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout,'spawn':'bitwarden-desktop'}),
            ("  ",{'layout': def_layout, 'spawn': 'obsidian'}),
-           ("  ",{'layout': def_layout, 'spawn':['telegram-desktop', 'slack']}),
+           ("  ",{'layout': def_layout, 'spawn':['slack', 'telegram-desktop']}),
            ("  ",{'layout': def_layout, 'spawn':'spotify-launcher'})]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
