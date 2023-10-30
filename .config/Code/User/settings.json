@@ -25,7 +25,6 @@
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.shell.osx": "/bin/zsh",
   "workbench.colorTheme": "Horizon Extended",
-"window.zoomLevel": 1,
 "redhat.telemetry.enabled": false,
   "githubPullRequests.pullBranch": "never",
   "editor.rulers": [

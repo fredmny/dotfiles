@@ -17,13 +17,20 @@ if [ $? != 0 ]; then
 	tmux split-window -h -t $session:1
 	tmux send-keys -t $session:1 'vifm .' C-m
 
-	# Window 2
-	tmux new-window -t $session:2 -n 'obsidian'
-	tmux send-keys -t $session:2 'cd obsidian_personal && gobs' C-m
+	# Window 2	
+	tmux new-window -t $session:2 -n 'mds project'
+	tmux send-keys -t $session:2 'cd projects/meltano_mds/finance_mds' C-m
+	tmux send-keys -t $session:2 'nvim' C-m
+	tmux split-window -h -t $session:2
+	tmux send-keys -t $session:2 'poetry shell' C-m
 
 	# Window 3
-	tmux new-window -t $session:3 -n 'docker'
-	tmux send-keys -t $session:3 'docker ps' C-m
+	tmux new-window -t $session:3 -n 'obsidian'
+	tmux send-keys -t $session:3 'cd obsidian_personal && gobs' C-m
+
+	# Window 4
+	tmux new-window -t $session:4 -n 'docker'
+	tmux send-keys -t $session:4 'docker ps' C-m
 fi
 
 tmux attach-session -t $session:0
