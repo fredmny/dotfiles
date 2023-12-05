@@ -75,3 +75,8 @@ gcba () {
 	issue_number=$1
 	gcb AMERDATAN-$issue_number
 }
+
+dbtf () {
+  dbt_model="$@"
+  dbt build -s $dbt_model --vars "full_load: true"
+}
