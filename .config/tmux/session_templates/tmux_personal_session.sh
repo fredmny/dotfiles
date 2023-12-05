@@ -31,6 +31,13 @@ if [ $? != 0 ]; then
 	# Window 4
 	tmux new-window -t $session:4 -n 'docker'
 	tmux send-keys -t $session:4 'docker ps' C-m
+
+	# Window 5	
+	tmux new-window -t $session:5 -n 'flutter'
+	tmux send-keys -t $session:5 'cd /home/prophet/projects/courses/fireship_flutter/quizapp' C-m
+	tmux send-keys -t $session:5 'nvim' C-m
+	tmux split-window -h -t $session:5
+	tmux send-keys -t $session:5 'cd /home/prophet/projects/courses/fireship_flutter/quizapp' C-m
 fi
 
 tmux attach-session -t $session:0

@@ -146,6 +146,7 @@ compinit
 
 
 export PATH="/home/prophet/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.pub-cache/bin"
 
 # Show colorful script
 colorscript --random
