@@ -35,7 +35,7 @@ layers:
       # be just modifiers without a key: 'ctrl-alt'.
       # You may combine up to 5 chords into a sequence using commas: 'ctrl-v,ctrl-c'.
       # Arbitrary scan codes (decimal) may be given like this: '<101>'.
-      - ["cmd-shift-j", "ctrl-capslock", "cmd-ctrl-q"]
+      - ["cmd-shift-j", "cmd-shift-u,enter", "cmd-e"]
         # - ["e", "f", "g", "h"]
         # - ["<100>", "j", "k", "l"]
     knobs:
