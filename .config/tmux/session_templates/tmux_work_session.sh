@@ -10,6 +10,7 @@ if [ $? != 0 ]; then
 	
 	# Window 0
 	tmux new-session -s $session -n sh -d
+  tmux send-keys -t $session:0 'ssh-add ~/.ssh/github' C-m
 	
 	# Window 1	
 	tmux new-window -t $session:1 -n 'dbt'
@@ -42,8 +43,13 @@ if [ $? != 0 ]; then
 
 	# Window 6
 	tmux new-window -t $session:6 -n 'data-analytics'
-  tmux send-keys -t $session:6 'nvim' C-m
+  tmux send-keys -t $session:6 'cd trustly_repos/data-analytics && nvim' C-m
 	tmux split-window -h -t $session:6
+
+	# Window 7
+	tmux new-window -t $session:7 -n 'data-engineering'
+  tmux send-keys -t $session:7 'cd trustly_repos/data-engineering && nvim' C-m
+	tmux split-window -h -t $session:7
 fi
 
 tmux attach-session -t $session:0
