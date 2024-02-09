@@ -1,8 +1,12 @@
 vim.keymap.set('n', '<leader>h', ':nohlsearch<cr>')
 vim.keymap.set('n', '<leader>w', ':w<cr>')
 vim.keymap.set('n', '<leader>q', ':q<cr>')
+vim.keymap.set('n', '<leader>qw', ':wq<cr>')
 vim.keymap.set('n', '<leader>qq', ':q!<cr>')
 vim.keymap.set('n', '<leader>j', ':bn<cr>')
 vim.keymap.set('n', '<leader>k', ':bp<cr>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<leader>bo', ':1, $-1 bd <cr>')
+-- GitSigns
+vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line <cr>')

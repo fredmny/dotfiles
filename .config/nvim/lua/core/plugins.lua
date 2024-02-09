@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
+  -- use 'nvim-tree/nvim-web-devicons'
   -- Diffview
   use "sindrets/diffview.nvim"  use 'nvim-lualine/lualine.nvim'
   -- for auto commenting with vim shortcut
@@ -43,6 +43,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   -- For which-key
   use "folke/which-key.nvim"
+  -- GitSigns
+  use "lewis6991/gitsigns.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
