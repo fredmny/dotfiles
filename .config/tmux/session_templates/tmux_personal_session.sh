@@ -30,7 +30,7 @@ if [ $? != 0 ]; then
 
 	# Window 4
 	tmux new-window -t $session:4 -n 'docker'
-	tmux send-keys -t $session:4 'docker ps' C-m
+	tmux send-keys -t $session:4 'cd projects/obsidian_personal_sync && docker ps' C-m
 
 	# Window 5	
 	tmux new-window -t $session:5 -n 'flutter'

@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
-  -- use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
   -- Diffview
   use "sindrets/diffview.nvim"  use 'nvim-lualine/lualine.nvim'
   -- for auto commenting with vim shortcut

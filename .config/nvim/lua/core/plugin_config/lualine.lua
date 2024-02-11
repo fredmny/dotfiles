@@ -4,10 +4,15 @@ options = {
   theme = 'gruvbox',
 },
 sections = {
+  -- lualine_a = {
+  --   {
+  --     'filename',
+  --     path = 1,
+  --   }
+  -- },
   lualine_a = {
     {
-      'filename',
-      path = 1,
+      'buffers',
     }
   }
 }
