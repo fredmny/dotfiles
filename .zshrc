@@ -148,5 +148,12 @@ compinit
 export PATH="/home/prophet/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 
+# Enabling fzf
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+# Enabling zoxide
+eval "$(zoxide init zsh --cmd cd)" 
+
 # Show colorful script
 colorscript --random
