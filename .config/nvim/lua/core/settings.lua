@@ -24,7 +24,7 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.wrap = true
 vim.opt.textwidth = 300
-
+vim.o.autoread = true
 
 -- Makes neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = "unnamedplus"

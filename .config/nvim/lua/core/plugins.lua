@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter'
   use 'christoomey/vim-tmux-navigator'
+  use 'PedramNavid/dbtpal'
   -- For LSPs
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
@@ -46,6 +47,8 @@ return require('packer').startup(function(use)
   -- Git related
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
+  -- For displaying indentation
+  use "lukas-reineke/indent-blankline.nvim"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
