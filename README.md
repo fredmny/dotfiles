@@ -29,6 +29,7 @@ These are the configuration files for my Arch Linux installation
 - **Misc terminal tools:**
     - tmux
     - fzf
+    - lazygit
 
 ### Other Scripts and Tools
 - [Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts)
