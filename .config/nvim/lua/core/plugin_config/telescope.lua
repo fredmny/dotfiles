@@ -1,5 +1,15 @@
-require('telescope').setup()
+require('telescope').setup{
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {
+        -- even more opts
+      }
+    }
+  }
+}
+
 local builtin = require('telescope.builtin')
+require("telescope").load_extension("ui-select")
 
 vim.keymap.set('n', '<c-p>', builtin.find_files, {})
 vim.keymap.set('n', '<Space><Space>', builtin.oldfiles, {})

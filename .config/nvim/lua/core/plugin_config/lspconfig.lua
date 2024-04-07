@@ -4,3 +4,5 @@ require("mason-lspconfig").setup({
 })
 
 require("lspconfig").lua_ls.setup {}
+require("lspconfig").terraformls.setup {}
+require("lspconfig").dockerls.setup {}
