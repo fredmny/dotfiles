@@ -1,5 +1,6 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.cmd.colorscheme("catppuccin")
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.cursorline = true
 vim.opt.autoread = true
@@ -47,6 +48,4 @@ vim.o.swapfile = false
 -- Use mouse on all modes
 --vim.opt.mouse = "a"
 
-
-
-vim.cmd [[ set noswapfile ]]
+vim.cmd([[ set noswapfile ]])
