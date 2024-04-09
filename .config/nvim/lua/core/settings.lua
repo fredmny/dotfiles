@@ -1,4 +1,3 @@
-vim.cmd.colorscheme("catppuccin")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
