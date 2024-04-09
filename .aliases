@@ -83,3 +83,24 @@ dbtf () {
   dbt_model="$@"
   dbt build -s $dbt_model --vars "full_load: true"
 }
+
+dbtdocs () {
+  model_name=$1
+  target_file=$2
+
+  dbt run-operation generate_model_yaml --args "{\"model_names\": [\"$model_name\"], \"upstream_descriptions\": \"true\", \"include_data_types\": \"false\"}" | tee temp_file
+  sed -i '' -n '/models:/,$p' temp_file
+  sed -i '' -n '/models:/!p' temp_file
+  sed -i '' -n '/data_type:/!p' temp_file
+  sed -i '' -n '/^\s*$/!p' temp_file
+
+  if [ "$target_file" ]
+      then
+          echo "" >> $target_file 
+          cat temp_file >> $target_file
+          echo "Generated documentation written into $target_file"
+      else
+          echo "target file not supplied"
+  fi
+  rm temp_file
+}
