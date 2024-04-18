@@ -30,6 +30,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use({
+		"windwp/nvim-autopairs",
+	})
+	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.2",
 		requires = { { "nvim-lua/plenary.nvim" } },
