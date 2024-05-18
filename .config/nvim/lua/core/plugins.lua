@@ -54,6 +54,10 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	-- none-ls
 	use("nvimtools/none-ls.nvim")
+	-- Debugger
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+	use("mfussenegger/nvim-dap-python")
 	-- For which-key
 	use("folke/which-key.nvim")
 	-- Git related

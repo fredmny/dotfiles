@@ -47,3 +47,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
   -- none-ls related
 vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
+-- DAP (debugger)
+vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
