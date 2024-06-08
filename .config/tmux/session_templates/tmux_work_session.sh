@@ -16,21 +16,21 @@ if [ $? != 0 ]; then
   tmux new-window -t $session:1 -n 'dbt'
   tmux send-keys -t $session:1 'cd ~/brm_repos/dbt/primary && nvim' C-m
   tmux split-window -v -t $session:1
-  #tmux send-keys -t $session:1 'cd dbt && poetry shell' C-m
+  tmux send-keys -t $session:1 'cd ~/brm_repos/dbt/primary' C-m
   tmux send-keys -t $session:1 'clear' C-m
   tmux split-window -h -t $session:1
   tmux send-keys -t $session:1 'cd ~/brm_repos/dbt/primary && lazygit' C-m
   tmux resize-pane -D -t $session:1.%1 -y 65%
 
   # Window 2  
-  #tmux new-window -t $session:2 -n 'dbt 2'
-  #tmux send-keys -t $session:2 'cd trustly_repos/dbt_secondary && nvim' C-m
-  #tmux split-window -v -t $session:2
-  #tmux send-keys -t $session:2 'cd trustly_repos/dbt_secondary && poetry shell' C-m
-  #tmux send-keys -t $session:2 'clear' C-m
-  #tmux split-window -h -t $session:2
-  #tmux send-keys -t $session:2 'cd trustly_repos/dbt_secondary && lazygit' C-m
-  #tmux resize-pane -D -t $session:2.%4 -y 65%
+  tmux new-window -t $session:2 -n 'databricks'
+  tmux send-keys -t $session:2 'cd ~/brm_repos/databricks-data-workflows && nvim' C-m
+  tmux split-window -v -t $session:2
+  tmux send-keys -t $session:2 'cd ~/brm_repos/databricks-data-workflows' C-m
+  tmux send-keys -t $session:2 'clear' C-m
+  tmux split-window -h -t $session:2
+  tmux send-keys -t $session:2 'cd ~/brm_repos/databricks-data-workflows && lazygit' C-m
+  tmux resize-pane -D -t $session:2.%1 -y 65%
 
   # Window 3  
   #tmux new-window -t $session:3 -n 'foundation'
