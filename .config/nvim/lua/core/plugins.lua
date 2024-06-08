@@ -58,6 +58,14 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 	use("mfussenegger/nvim-dap-python")
+	-- LSPsaga - has a lot of options to explore
+	use({
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
 	-- For which-key
 	use("folke/which-key.nvim")
 	-- Git related
