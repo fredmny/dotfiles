@@ -442,7 +442,112 @@ screens = [
                 #     foreground = fgcolor,
                 #     path = '/dev/sda2',
                 #     ),
-                widget.Systray(),
+                # widget.Systray(),
+            ],
+            26,
+            margin = [1, 6, 4, 6],
+            opacity = 0.85,
+        ),
+    ),
+
+    Screen(
+        top=bar.Bar(
+            [
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 9,
+                    ),
+                widget.GroupBox(
+                    rounded = False,
+                    active = colors[7],     # Color of text of active group
+                    inactive = colors[6],
+                    highlight_method = 'block',
+                    highlight_color = [colors[3], colors[4]],
+                    # current_screen_border = colors[1],
+                    this_current_screen_border = colors[1],
+                    ),
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 20,
+                    ),
+                widget.Spacer(),
+                widget.Wlan(
+                    background = colors[4],
+                    foreground = colors[0],
+                    interface = 'wlan0',
+                    format = '  {essid} {percent:2.0%} |'
+                    ),
+                widget.Net(
+                    background = colors[4],
+                    foreground = fgcolor,
+                    format = '{down}  {up} ',
+                    disconnected_message = 'N/A',
+                    ),
+                widget.TextBox(
+                    " Layout:",
+                    background = colors[5],
+                    foreground = fgcolor,
+                    ),
+                widget.CurrentLayoutIcon(
+                    background = colors[5],
+                    foreground = fgcolor,
+                    scale = 0.7,
+                    padding = 8,
+                    ),
+#                widget.CurrentLayout(
+#                    background = colors[5],
+#                    foreground = fgcolor,
+#                    padding = 5,
+#                    ),
+                widget.Volume(
+                    emoji = False,
+                    background = colors[6],
+                    foreground = fgcolor,
+                    fmt = ' {}',
+                    padding = 8,
+                    ),
+                widget.Clock(
+                    format=' %d/%m/%y  %H:%M',
+                    background = colors[7],
+                    foreground = fgcolor,
+                    padding = 9,
+                    ),
+                widget.Battery(
+                    background = colors[8],
+                    foreground = fgcolor,
+                    format = ' {char} {percent:2.0%} {hour:d}:{min:02d}',
+                    padding = 9,
+                    ),
+
+            ],
+            24,
+            margin = [4, 6, 1, 6],
+            opacity = 0.85,
+        ),
+        bottom=bar.Bar(
+            [
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.CheckUpdates(
+                    distro = 'Arch',
+                    fmt = ' - {}',
+                    background = colors[5],
+                    foreground = fgcolor,
+                    padding = 9,
+                    no_update_string = ' : N/A'
+                    ),
+                widget.Pomodoro(
+                    background = colors[6],
+                    foreground = fgcolor,
+                    padding = 9,
+                    color_inactive = 'ff9933',
+                    ),
+                # widget.HDDGraph(
+                #     background = colors[7],
+                #     foreground = fgcolor,
+                #     path = '/dev/sda2',
+                #     ),
+                # widget.Systray(),
             ],
             26,
             margin = [1, 6, 4, 6],
