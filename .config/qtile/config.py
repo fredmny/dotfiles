@@ -91,9 +91,9 @@ keys = [
     Key([mod], "o", lazy.layout.maximize()),
 
     # Change to other screen
-    Key([mod], "y",      lazy.to_screen(2)),
-    Key([mod], "u",      lazy.to_screen(1)),
-    Key([mod], "i",      lazy.to_screen(0)),
+    Key([mod], "u",      lazy.to_screen(2)),
+    Key([mod], "i",      lazy.to_screen(1)),
+    Key([mod], "y",      lazy.to_screen(0)),
     
     # Change the volume if our keyboard has keys
     Key(
