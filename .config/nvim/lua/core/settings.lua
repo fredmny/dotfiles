@@ -9,7 +9,7 @@ vim.opt.showcmd = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.numberwidth = 3
-vim.o.signcolumn = "auto:3"
+vim.o.signcolumn = "yes:3"
 
 -- Number of screen lines to keep above and below the cursor
 vim.o.scrolloff = 8
