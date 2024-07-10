@@ -33,7 +33,8 @@ alias nvconf='nvim ~/.config/nvim/'
 alias gdn='gd --name-status'
 alias kbtool='sudo /home/prophet/bin_/ch57x-keyboard-tool'
 alias econf='nvim ~/Library/Application\ Support/espanso/match/base.yml'
-alias lzg='lazygit'
+alias lg='lazygit'
+alias nzf='fzf --bind "enter:become(nvim {})"'
 
 ## functions
 mcd () {

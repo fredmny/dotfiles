@@ -9,10 +9,12 @@ These are the configuration files for my Arch Linux installation
 ## Used Applications
 - **Window Manager:** Qtile 
 - **Shell:** zsh (+oh\_my\_zsh)
+    - **Theme:** PowerLevel10k
 - **Terminal:** termite
 - **TUI File Manager:** 
     - Ranger (with ueberzug to visualize images)
     - vifm
+- **Text Editor:** Neovim
 - **GUI File Manager:** pcmanfm
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
@@ -24,12 +26,12 @@ These are the configuration files for my Arch Linux installation
 - **Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **GUI IDE:** Visual Studio Code
 - **Note taking:** Obsidian
-- **Text Editor:** Neovim
-    - **Plugin manager:** Packer
+- **Plugin manager:** Packer
 - **Misc terminal tools:**
     - tmux
     - fzf
     - lazygit
+    - zoxide
 
 ### Other Scripts and Tools
 - [Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts)
