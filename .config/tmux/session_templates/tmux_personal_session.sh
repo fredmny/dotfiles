@@ -19,10 +19,10 @@ if [ $? != 0 ]; then
 
 	# Window 2	
 	tmux new-window -t $session:2 -n 'mds project'
-	tmux send-keys -t $session:2 'cd projects/meltano_mds/finance_mds' C-m
+	tmux send-keys -t $session:2 'cd projects/personal_mds' C-m
 	tmux send-keys -t $session:2 'nvim' C-m
 	tmux split-window -h -t $session:2
-	tmux send-keys -t $session:2 'poetry shell' C-m
+	tmux send-keys -t $session:2 'cd projects/personal_mds && poetry shell' C-m
 
 	# Window 3
 	tmux new-window -t $session:3 -n 'obsidian'
