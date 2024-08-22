@@ -11,6 +11,8 @@ null_ls.setup({
 		null_ls.builtins.formatting.isort,
 		null_ls.builtins.formatting.yamlfmt,
 		null_ls.builtins.diagnostics.yamllint,
+		null_ls.builtins.diagnostics.actionlint,
+		null_ls.builtins.diagnostics.checkmake,
 		-- null_ls.builtins.completion.spell,
 	},
 })

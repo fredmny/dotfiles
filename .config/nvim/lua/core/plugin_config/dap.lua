@@ -16,4 +16,9 @@ dap.listeners.before.event_exited.dapui_config = function()
 end
 -- Debuggers
   -- Requires debugpy in specified folder
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+-- require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+-- To use with globally installed debugpy uncomment below
+require('dap-python').setup('python')
+
+-- To setup more debuggers refer to
+-- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
