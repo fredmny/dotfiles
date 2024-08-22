@@ -33,14 +33,14 @@ if [ $? != 0 ]; then
   tmux resize-pane -D -t $session:2.%1 -y 65%
 
   # Window 3  
-  #tmux new-window -t $session:3 -n 'foundation'
-  #tmux send-keys -t $session:3 'cd trustly_repos/dbt_foundation && nvim' C-m
-  #tmux split-window -v -t $session:3
-  #tmux send-keys -t $session:3 'cd trustly_repos/dbt_foundation && poetry shell' C-m
-  #tmux send-keys -t $session:3 'clear' C-m
-  #tmux split-window -h -t $session:3
-  #tmux send-keys -t $session:3 'cd trustly_repos/dbt_foundation && lazygit' C-m
-  #tmux resize-pane -D -t $session:3.%7 -y 65%
+  tmux new-window -t $session:3 -n 'datalake-pipelines'
+  tmux send-keys -t $session:3 'cd ~/brm_repos/datalake-pipelines && source .venv/bin/activate && nvim' C-m
+  tmux split-window -v -t $session:3
+  tmux send-keys -t $session:3 'cd ~/brm_repos/datalake-pipelines && source .venv/bin/activate' C-m
+  tmux send-keys -t $session:3 'clear' C-m
+  tmux split-window -h -t $session:3
+  tmux send-keys -t $session:3 'cd ~/brm_repos/datalake-pipelines && lazygit' C-m
+  tmux resize-pane -D -t $session:3.%1 -y 65%
 
   # Window 4
   #tmux new-window -t $session:4 -n 'obsidian'

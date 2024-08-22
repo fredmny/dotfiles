@@ -34,11 +34,12 @@ alias gdn='gd --name-status'
 alias kbtool='sudo /home/prophet/bin_/ch57x-keyboard-tool'
 alias econf='nvim ~/Library/Application\ Support/espanso/match/base.yml'
 alias lg='lazygit'
-alias nzf='fzf --bind "enter:become(nvim {})"'
+alias nzf='fzf --bind "enter:become(nvim {})" --tmux center,90%,50%'
 alias tzf='fzf --tmux center,90%,50%'
 alias fzp="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 alias tzp='fzp --tmux center,90%,50%'
-alias nzp='fzp --bind "enter:become(nvim {})"'
+alias nzp='fzp --bind "enter:become(nvim {})" --tmux center,90%,50%'
+alias sp='source .venv/bin/activate'
 
 ## functions
 mcd () {
