@@ -52,6 +52,9 @@ if [ $? != 0 ]; then
   tmux new-window -t $session:5 -n 'docker'
   tmux split-window -v -t $session:5
 
+  # Window 8
+  tmux new-window -t $session:8 -n 'k8s'
+
 fi
 
 tmux attach-session -t $session:0
