@@ -8,6 +8,7 @@ vim.keymap.set('n', '<leader>k', ':bp<cr>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<leader>bo', ':1, $-1 bd <cr>')
+vim.keymap.set('n', '<leader>-', ':Twilight <cr>')
 -- GitSigns
 vim.keymap.set('n', '<leader>gb', ':Gitsigns blame_line <cr>')
 vim.keymap.set('n', '<leader>gj', ':Gitsigns next_hunk <cr>')

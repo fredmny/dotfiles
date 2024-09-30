@@ -39,9 +39,15 @@ return require("packer").startup(function(use)
 	})
 	use({ "nvim-telescope/telescope-ui-select.nvim" })
 	use({
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
+	use({
 		"folke/todo-comments.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
+	use("folke/twilight.nvim")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = "TSUpdate",
@@ -71,6 +77,7 @@ return require("packer").startup(function(use)
 	-- Git related
 	use("lewis6991/gitsigns.nvim")
 	use("tpope/vim-fugitive")
+	use("ThePrimeagen/git-worktree.nvim")
 	-- For displaying indentation
 	use("lukas-reineke/indent-blankline.nvim")
 
