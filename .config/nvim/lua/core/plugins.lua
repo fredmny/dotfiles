@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-web-devicons")
 	-- Diffview
 	use("sindrets/diffview.nvim")
+	use("rcarriga/nvim-notify")
 	-- for auto commenting with vim shortcut
 	use({
 		"numToStr/Comment.nvim",
