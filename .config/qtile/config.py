@@ -176,7 +176,7 @@ def_layout = "bsp"
 
 group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
            ("  ",{'layout': def_layout}),
-           ("  ",{'layout': def_layout,'spawn':'firefox'}),
+           ("  ",{'layout': def_layout,'spawn':'zen-alpha'}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout,'spawn':'bitwarden-desktop'}),
