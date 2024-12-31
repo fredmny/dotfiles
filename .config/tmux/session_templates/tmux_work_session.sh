@@ -43,10 +43,13 @@ if [ $? != 0 ]; then
   tmux resize-pane -D -t $session:3.%1 -y 65%
 
   # Window 4
-  #tmux new-window -t $session:4 -n 'obsidian'
-  #tmux send-keys -t $session:4 'cd ~/personal/obsidian && gsb' C-m
-  #tmux split-window -v -t $session:4
-  #tmux send-keys -t $session:4 'cd obsidian_personal && lazygit' C-m
+  tmux new-window -t $session:4 -n 'dp-wt'
+  tmux send-keys -t $session:4 'cd ~/brm_repos/datalake-pipelines-workdir && nvim' C-m
+  tmux split-window -v -t $session:4
+  tmux send-keys -t $session:4 'cd ~/brm_repos/datalake-pipelines-workdir' C-m
+  tmux split-window -h -t $session:4
+  tmux send-keys -t $session:4 'cd ~/brm_repos/datalake-pipelines-workdir && lazygit' C-m
+  tmux resize-pane -D -t $session:4.%1 -y 65%
 
   # Window 5
   tmux new-window -t $session:5 -n 'docker'
