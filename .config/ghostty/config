@@ -1,0 +1,5 @@
+command = /bin/zsh
+click-repeat-interval = 500
+auto-update-channel = stable
+theme = Banana Blueberry
+background-opacity = 0.8
