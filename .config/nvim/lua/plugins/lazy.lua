@@ -36,10 +36,18 @@ require("lazy").setup({
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	"nvim-tree/nvim-tree.lua",
 	{
-    "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
-  },
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		-- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+	},
 	"nvim-lualine/lualine.nvim",
 	-- "ellisonleao/gruvbox.nvim",
 	"nvim-tree/nvim-tree.lua",
@@ -98,7 +106,7 @@ require("lazy").setup({
 		after = "nvim-lspconfig",
 	},
 	-- For which-key
-	{"folke/which-key.nvim"},
+	{ "folke/which-key.nvim" },
 	-- Git related
 	"lewis6991/gitsigns.nvim",
 	"tpope/vim-fugitive",
@@ -125,15 +133,15 @@ require("lazy").setup({
 			"hrsh7th/nvim-cmp",
 		},
 	},
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-  },
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		-- Optional dependencies
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+	},
 })
 
 -- configure notify for telescope
