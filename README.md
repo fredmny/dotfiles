@@ -1,6 +1,8 @@
 # Fred's Dotfiles
 These are the configuration files for my Arch Linux installation
 
+[[toc]]
+
 ## Screenshot
 ![Screenshot 01](./.screenshots/screenshot_01.png)
 ![Screenshot 02](./.screenshots/screenshot_02.png)
@@ -10,29 +12,32 @@ These are the configuration files for my Arch Linux installation
 - **Window Manager:** Qtile 
 - **Shell:** zsh (+oh\_my\_zsh)
     - **Theme:** PowerLevel10k
-- **Terminal:** termite
+- **Terminal:** termite/ghostty
+- **Terminal multiplexer:** tmux
 - **TUI File Manager:** 
     - Ranger (with ueberzug to visualize images)
     - vifm
 - **Text Editor:** Neovim
+    - **Plugin manager:** Lazy.nvim
+    - To get a list of the plugins I am using refer to [The Lazy config file](https://github.com/fredmny/dotfiles/blob/master/.config/nvim/lua/plugins/lazy.lua)
 - **GUI File Manager:** pcmanfm
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
 - **GTK Appearance Management:** lxappearance
-- **Browser:** firefox
+- **Browser:** firefox / Zen
 - **Video Player:** mpv
 - **Screenshot tool:** [flameshot](https://flameshot.org/)
 - **Audo Engine:** [Pipewire](https://pipewire.org/) with [EasyEffects](https://github.com/wwmm/easyeffects) to control it
 - **Launcher:** [rofi](https://github.com/davatorium/rofi)
-- **GUI IDE:** Visual Studio Code
 - **Note taking:** Obsidian
-- **Plugin manager:** Packer
 - **Misc terminal tools:**
-    - tmux
     - fzf
     - lazygit
     - zoxide
     - bat
+    - lazygit
+    - lazydocker
+    - ascii-image-converter
 
 ### Other Scripts and Tools
 - [Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts)
