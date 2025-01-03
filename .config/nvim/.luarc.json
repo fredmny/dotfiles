@@ -1,6 +1,7 @@
 {
     "diagnostics.globals": [
         "vim",
-        "git_worktree"
+        "git_worktree",
+        "telescopeConfig"
     ]
 }

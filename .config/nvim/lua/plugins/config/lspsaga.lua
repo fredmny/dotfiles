@@ -4,6 +4,8 @@ require("lspsaga").setup({
 	},
 	outline = {
 		win_position = "right",
-    win_width = 50,
+		win_width = 60,
 	},
 })
+
+vim.keymap.set("n", "<leader>lo", ":Lspsaga outline <cr>", { desc = "Open outline" })

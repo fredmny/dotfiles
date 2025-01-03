@@ -1,8 +1,6 @@
 # Fred's Dotfiles
 These are the configuration files for my Arch Linux installation
 
-[[toc]]
-
 ## Screenshot
 ![Screenshot 01](./.screenshots/screenshot_01.png)
 ![Screenshot 02](./.screenshots/screenshot_02.png)
