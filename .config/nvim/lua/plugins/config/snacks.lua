@@ -26,6 +26,7 @@ require("snacks").setup({
 		margin = { top = 0, right = 1, bottom = 0 },
 		padding = true, -- add 1 cell of left/right padding to the notification window
 		sort = { "level", "added" }, -- sort by level and time
+    styles = 'expanded',
 		-- minimum log level to display. TRACE is the lowest
 		-- all notifications are stored in history
 		level = vim.log.levels.TRACE,
@@ -56,9 +57,12 @@ local Snacks = require("snacks")
 vim.keymap.set("n", "<leader>gl", function()
 	Snacks.lazygit.log()
 end, { desc = "Lazygit Log (cwd)" })
-vim.keymap.set("n", "<leader>un", function()
+vim.keymap.set("n", "<leader>nu", function()
 	Snacks.notifier.hide()
 end, { desc = "Dismiss All Notifications" })
+vim.keymap.set("n", "<leader>nh", function()
+	Snacks.notifier.show_history()
+end, { desc = "Show notifier history" })
 vim.keymap.set("n", "<leader>gg", function()
 	Snacks.lazygit()
 end, { desc = "Lazygit" })
