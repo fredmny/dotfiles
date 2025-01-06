@@ -21,6 +21,23 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Get terminal output
+local function get_cmd_output(cmd)
+  local handle = io.popen(cmd)
+  local result = handle:read("*a")
+  handle:close()
+  return result
+end
+
+-- Get Obsidian path
+local system_name = get_cmd_output("uname -s")
+system_name = system_name:gsub("%s+", "")
+local obsidian_path = ""
+if system_name == "Linux" then
+  obsidian_path = vim.fn.expand "~" .. "/shared_drive/obsidian_personal/*.md"
+else
+  obsidian_path = vim.fn.expand "~" .. "/personal/obsidian_personal/*.md"
+end
 -- Setup lazy.nvim
 require("lazy").setup({
 	-- spec = {
@@ -142,8 +159,8 @@ require("lazy").setup({
       -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
       -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
       -- refer to `:h file-pattern` for more examples
-      "BufReadPre " .. vim.fn.expand "~" .. "/personal/obsidian_personal/*.md",
-      "BufNewFile " .. vim.fn.expand "~" .. "/personal/obsidian_personal/*.md",
+      "BufReadPre " .. obsidian_path,
+      "BufNewFile " .. obsidian_path,
     },
     dependencies = {
       "nvim-lua/plenary.nvim",

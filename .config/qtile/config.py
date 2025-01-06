@@ -59,7 +59,7 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
-    Key([mod], "Return", lazy.spawn("termite")),
+    Key([mod], "Return", lazy.spawn("ghostty")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -174,9 +174,9 @@ def_layout = "bsp"
 
 # Define Groups
 
-group_names=[("  ",{'layout': def_layout, 'spawn':'termite'}),
+group_names=[("  ",{'layout': def_layout, 'spawn':'ghostty'}),
            ("  ",{'layout': def_layout}),
-           ("  ",{'layout': def_layout,'spawn':'zen-alpha'}),
+           ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout}),
            ("  ",{'layout': def_layout,'spawn':'bitwarden-desktop'}),
@@ -194,7 +194,7 @@ for i, (name, kwargs) in enumerate(group_names, 1):
 layout_theme = {"border_width": 2,
                 "margin": 5,
                 "border_focus": colors[7],
-                "border_normal": "1D2330"
+                "border_normal": "212121"
                 }
 
 layouts = [
