@@ -13,7 +13,7 @@ local obsidian_path = ""
 if system_name == "Linux" then
 	obsidian_path = "~/shared_drive/obsidian_personal/"
 else
-	obsidian_path = "~/personal/obsidian_personal/*.md"
+	obsidian_path = "~/personal/obsidian_personal/"
 end
 
 require("obsidian").setup({
