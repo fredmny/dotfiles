@@ -23,6 +23,6 @@ require("lspconfig").ruff.setup({
 require("lspconfig").pyright.setup({
 	capabilities = capabilities,
 })
-require("lspconfig").pyright.setup({
-	capabilities = capabilities,
+require("lspconfig").eslint.setup({
+	-- capabilities = capabilities,
 })
