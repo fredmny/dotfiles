@@ -36,6 +36,7 @@ These are the configuration files for my Arch Linux installation
     - lazygit
     - lazydocker
     - ascii-image-converter
+    - [The Fuck](https://github.com/nvbn/thefuck)
 
 ### Other Scripts and Tools
 - [Shell Color Scripts](https://gitlab.com/dwt1/shell-color-scripts)
