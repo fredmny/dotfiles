@@ -72,6 +72,16 @@ require("lazy").setup({
 	"nvim-tree/nvim-web-devicons",
 	-- Diffview
 	"sindrets/diffview.nvim",
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    }
+  },
 	-- "rcarriga/nvim-notify",
 	-- for auto commenting with vim shortcut
 	{
