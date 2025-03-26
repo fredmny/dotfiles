@@ -72,16 +72,13 @@ require("lazy").setup({
 	"nvim-tree/nvim-web-devicons",
 	-- Diffview
 	"sindrets/diffview.nvim",
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    }
-  },
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+	},
 	-- "rcarriga/nvim-notify",
 	-- for auto commenting with vim shortcut
 	{
@@ -161,6 +158,23 @@ require("lazy").setup({
 			"hrsh7th/nvim-cmp",
 		},
 	},
+	-- GitHub Copilot
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+	},
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "zbirenbaum/copilot.lua" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+	},
 	-- Obsidian
 	{
 		"epwalsh/obsidian.nvim",
@@ -181,8 +195,6 @@ require("lazy").setup({
 		"stevearc/oil.nvim",
 		---@module 'oil'
 		---@type oil.SetupOpts
-		opts = {},
-		-- Optional dependencies
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
 		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
 	},
