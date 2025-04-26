@@ -16,7 +16,7 @@
 require("copilot").setup({
 	suggestion = { enabled = false },
 	panel = { enabled = false },
-	model = "claude-3-sonnet-20240229",
+	model = "claude-3.7-sonnet",
 	filetypes = {
 		["copilot-chat"] = false,
 	},
@@ -24,15 +24,16 @@ require("copilot").setup({
 
 require("copilot_cmp").setup()
 require("CopilotChat").setup({
+	model = "claude-3.7-sonnet",
 	window = {
 		layout = "float",
 		position = "right",
 		width = 0.4,
-    height = 0.9,
+		height = 0.9,
 		border = "rounded",
 		title = "Copilot Chat",
-    col = 2000,
-    row = 1,
+		col = 2000,
+		row = 1,
 		footer = "",
 		win_opts = {
 			winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
@@ -40,19 +41,23 @@ require("CopilotChat").setup({
 	},
 	mappings = {
 		reset = {
-			normal = '<C-c>',
-			insert = '<C-c>',
+			normal = "<C-c>",
+			insert = "<C-c>",
 		},
 		close = {
-			normal = 'q',
+			normal = "q",
 		},
 	},
-  -- Custom prompts
-  -- prompts = {
-  --   CreateOnComment = {
-  --     prompt = 'Create the piece of code for the selected comment',
-  --   },
-  -- }
+	-- Enable the picker for agents and prompts
+	picker = {
+		enabled = true,
+	},
+	-- Custom prompts
+	-- prompts = {
+	--   CreateOnComment = {
+	--     prompt = 'Create the piece of code for the selected comment',
+	--   },
+	-- }
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>zz", ":CopilotChat<CR>", { desc = "Chat with Copilot" })
@@ -60,7 +65,9 @@ vim.keymap.set("v", "<leader>ze", ":CopilotChatExplain<CR>", { desc = "Explain" 
 vim.keymap.set("v", "<leader>zr", ":CopilotChatReview<CR>", { desc = "Review" })
 vim.keymap.set("v", "<leader>zf", ":CopilotChatFix<CR>", { desc = "Fix" })
 vim.keymap.set("v", "<leader>zo", ":CopilotChatOptimize<CR>", { desc = "Optimize" })
-vim.keymap.set("v", "<leader>zd", ":CopilotChatDocs<CR>", { desc = "Docs" })
+vim.keymap.set("v", "<leader>zd", ":CopilotChatDocs<CR>", { desc = "GenerateDocs" })
 vim.keymap.set("v", "<leader>zt", ":CopilotChatTests<CR>", { desc = "Generate Tests" })
 vim.keymap.set("n", "<leader>zc", ":CopilotChatCommit<CR>", { desc = "Write commit message" })
+vim.keymap.set("n", "<leader>zM", ":CopilotChatModels<CR>", { desc = "Select Chat model" })
+vim.keymap.set("n", "<leader>zA", ":CopilotChatAgent<CR>", { desc = "Select Chat model" })
 -- vim.keymap.set("v", "<leader>zm", ":CopilotChatCreateOnComment<CR>", { desc = "Create on Comment" })
