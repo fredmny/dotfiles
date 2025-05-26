@@ -175,6 +175,23 @@ require("lazy").setup({
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 	},
+	-- CodeCompanion
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  },
+	-- MCP Hub
+	{
+		"ravitemer/mcphub.nvim",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+		build = "npm install -g mcp-hub@latest", -- Install mcp-hub globally
+	},
 	-- Obsidian
 	{
 		"epwalsh/obsidian.nvim",

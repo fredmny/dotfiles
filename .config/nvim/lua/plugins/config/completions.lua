@@ -27,15 +27,15 @@ cmp.setup({
 	sources = cmp.config.sources({
 		-- { name = "nvim_lsp" },
 		-- { name = "vsnip" }, -- For vsnip users.
-		{ name = "copilot", group_index = 2 },
-		{ name = "luasnip" }, -- For luasnip users.
-		{ name = "nvim_lsp" },
-		{ name = "codeium" },
-		{ name = "render-markdown" },
+		{ name = "copilot", group_index = 0 },
+		{ name = "luasnip", group_index = 0 }, -- For luasnip users.
+		{ name = "nvim_lsp", group_index = 0 },
+		{ name = "codeium", group_index = 0 },
+		{ name = "render-markdown", group_index = 0 },
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {
-		{ name = "buffer" },
+		{ name = "buffer", group_index = 1 },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({

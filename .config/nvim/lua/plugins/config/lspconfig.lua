@@ -1,31 +1,11 @@
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "sqlls", "ruff" },
-})
-
+-- Setup LSP servers with capabilities
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
 
-require("lspconfig").lua_ls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").terraformls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").dockerls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").sqlls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").ruff.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").pyright.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").ts_ls.setup({
-  capabilities = capabilities,
-})
--- require("lspconfig").eslint.setup({
--- 	capabilities = capabilities,
--- })
+-- Manually setup each server
+local servers = { "lua_ls", "sqlls", "ruff", "terraformls", "dockerls", "pyright", "ts_ls" }
+for _, server in ipairs(servers) do
+	lspconfig[server].setup({
+		capabilities = capabilities,
+	})
+end

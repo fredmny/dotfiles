@@ -16,7 +16,7 @@
 require("copilot").setup({
 	suggestion = { enabled = false },
 	panel = { enabled = false },
-	model = "claude-3.7-sonnet",
+	model = "claude-sonnet-4",
 	filetypes = {
 		["copilot-chat"] = false,
 	},
@@ -24,7 +24,7 @@ require("copilot").setup({
 
 require("copilot_cmp").setup()
 require("CopilotChat").setup({
-	model = "claude-3.7-sonnet",
+	model = "claude-sonnet-4",
 	window = {
 		layout = "float",
 		position = "right",
