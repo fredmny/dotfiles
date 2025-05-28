@@ -6,6 +6,10 @@ require("mason-lspconfig").setup({
 -- require("lspconfig").setup()
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+vim.diagnostic.config({
+  virtual_text = true,
+})
+
 vim.lsp.config('ruff', {
   init_options = {
     settings = {
@@ -14,9 +18,7 @@ vim.lsp.config('ruff', {
   capabilities = capabilities,
   }
 })
-
 vim.lsp.enable('ruff')
-
 
 vim.lsp.config('lua_ls', {
   on_init = function(client)
@@ -93,4 +95,3 @@ vim.lsp.enable("pyright")
 
 -- ts_ls
 vim.lsp.enable("ts_ls")
-
