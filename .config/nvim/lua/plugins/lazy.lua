@@ -136,6 +136,16 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 	"tpope/vim-fugitive",
 	"ThePrimeagen/git-worktree.nvim",
+	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			-- OR 'ibhagwan/fzf-lua',
+			-- OR 'folke/snacks.nvim',
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 	-- For displaying indentation
 	"lukas-reineke/indent-blankline.nvim",
 
@@ -176,14 +186,14 @@ require("lazy").setup({
 		build = "make tiktoken", -- Only on MacOS or Linux
 	},
 	-- CodeCompanion
-  {
-    "olimorris/codecompanion.nvim",
-    opts = {},
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-    },
-  },
+	{
+		"olimorris/codecompanion.nvim",
+		opts = {},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
 	-- MCP Hub
 	{
 		"ravitemer/mcphub.nvim",

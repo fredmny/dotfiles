@@ -1,0 +1,109 @@
+prSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+    type: null
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+    type: null
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+    type: null
+  - title: Datalake Pipelines
+    filters: repo:Branching-Minds/datalake-pipelines is:closed
+    type: null
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+repo:
+  branchesRefetchIntervalSeconds: 30
+  prsRefetchIntervalSeconds: 60
+defaults:
+  preview:
+    open: true
+    width: 50
+  prsLimit: 20
+  prApproveComment: LGTM
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 20
+      author:
+        width: 15
+      authorIcon:
+        hidden: false
+      assignees:
+        width: 20
+        hidden: true
+      base:
+        width: 15
+        hidden: true
+      lines:
+        width: 15
+    issues:
+      updatedAt:
+        width: 5
+      createdAt:
+        width: 5
+      repo:
+        width: 15
+      creator:
+        width: 10
+      creatorIcon:
+        hidden: false
+      assignees:
+        width: 20
+        hidden: true
+  refetchIntervalMinutes: 30
+keybindings:
+  universal:
+    - key: g
+      name: lazygit
+      command: >
+        cd {{.RepoPath}} && lazygit
+  prs:
+    - key: O
+      builtin: checkout
+    - key: m
+      command: gh pr merge --admin --repo {{.RepoName}} {{.PrNumber}}
+    - key: C
+      name: code review
+      command: >
+        tmux new-window -c {{.RepoPath}} '
+        nvim -c ":silent Octo pr edit {{.PrNumber}}"
+        '
+    # - key: b
+    #   name: code review
+    #   command: cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json statusCheckRollup | command jq -rcj '.statusCheckRollup.[] | select(.context == "buildkite/mono") | .targetUrl' | xargs open
+    - key: a
+      name: lazygit add
+      command: >
+        cd {{.RepoPath}} && git add -A && lazygit
+    - key: v
+      name: approve
+      command: >
+        gh pr review --repo {{.RepoName}} --approve --body "$(gum input --prompt='Approval Comment: ')" {{.PrNumber}}
+  issues: []
+  branches: []
+repoPaths:
+  Branching-Minds/datalake-pipelines: ~/brm_repos/datalake-pipelines-workdir/datalake-pipelines
+theme:
+  ui:
+    sectionsShowCount: true
+    table:
+      showSeparator: true
+      compact: false
+pager:
+  diff: ""
+confirmQuit: false
+showAuthorIcons: true
+smartFilteringAtLaunch: true
