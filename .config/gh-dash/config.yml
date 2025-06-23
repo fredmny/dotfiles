@@ -8,7 +8,10 @@ prSections:
   - title: Involved
     filters: is:open involves:@me -author:@me
     type: null
-  - title: Datalake Pipelines
+  - title: DP Open
+    filters: repo:Branching-Minds/datalake-pipelines is:open
+    type: null
+  - title: DP Closed
     filters: repo:Branching-Minds/datalake-pipelines is:closed
     type: null
 issuesSections:
@@ -46,7 +49,7 @@ defaults:
         hidden: true
       base:
         width: 15
-        hidden: true
+        hidden: false
       lines:
         width: 15
     issues:
@@ -73,8 +76,11 @@ keybindings:
   prs:
     - key: O
       builtin: checkout
-    - key: m
-      command: gh pr merge --admin --repo {{.RepoName}} {{.PrNumber}}
+    # - key: m
+    #   command: gh pr merge --admin --repo {{.RepoName}} {{.PrNumber}}
+    - key: M
+      name: Auto-Merge
+      command: gh pr merge --auto --repo {{.RepoName}} {{.PrNumber}}
     - key: C
       name: code review
       command: >
