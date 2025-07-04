@@ -1,3 +1,3 @@
 require('codeium').setup({
-  enable_chat = true
+  enable_chat = true,
 })

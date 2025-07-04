@@ -27,13 +27,15 @@ cmp.setup({
 	sources = cmp.config.sources({
 		-- { name = "nvim_lsp" },
 		-- { name = "vsnip" }, -- For vsnip users.
-		{ name = "luasnip" }, -- For luasnip users.
-		{ name = "nvim_lsp" },
-		{ name = "codeium" },
+		{ name = "luasnip", group_index = 0 }, -- For luasnip users.
+		{ name = "nvim_lsp", group_index = 0 },
+		{ name = "codeium", group_index = 0 },
+		{ name = "render-markdown", group_index = 0 },
+		{ name = "buffer", group_index = 0 },
+		{ name = "copilot", group_index = 0 },
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {
-		{ name = "buffer" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({
@@ -43,7 +45,7 @@ cmp.setup({
 			-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
 			ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 			show_labelDetails = true, -- show labelDetails in menu. Disabled by default
-			symbol_map = { Codeium = "" },
+			symbol_map = { Codeium = "", Copilot = "" },
 
 			-- The function below will be called before any actual modifications from lspkind
 			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -58,12 +60,18 @@ cmp.setup({
 -- For luasnip keymaps
 local ls = require("luasnip")
 
-vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
+vim.keymap.set({ "i" }, "<C-K>", function()
+	ls.expand()
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-L>", function()
+	ls.jump(1)
+end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<C-J>", function()
+	ls.jump(-1)
+end, { silent = true })
 
-vim.keymap.set({"i", "s"}, "<C-E>", function()
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	end
-end, {silent = true})
+end, { silent = true })

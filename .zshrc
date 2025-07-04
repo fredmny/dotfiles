@@ -75,6 +75,7 @@ plugins=(
   zsh-syntax-highlighting 
   copyfile # copy contents of file
   copybuffer # copy what's typed in the command line with Ctrl+O
+  zsh-vi-mode
 )
 bindkey '^ ' autosuggest-accept
 

@@ -42,6 +42,8 @@ alias tzp='fzp --tmux center,90%,50%'
 alias nzp='fzp --bind "enter:become(nvim {})" --tmux center,90%,50%'
 alias sp='source .venv/bin/activate'
 alias k='sudo kubectl'
+alias ddev='dagster dev'
+alias ghd='gh dash'
 
 ## functions
 mcd () {
