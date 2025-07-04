@@ -41,6 +41,7 @@ alias fzp="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 alias tzp='fzp --tmux center,90%,50%'
 alias nzp='fzp --bind "enter:become(nvim {})" --tmux center,90%,50%'
 alias sp='source .venv/bin/activate'
+alias k='sudo kubectl'
 
 ## functions
 mcd () {
