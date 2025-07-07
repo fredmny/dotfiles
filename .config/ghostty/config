@@ -6,3 +6,4 @@ background-opacity = 0.9
 background-blur-radius = 20
 font-size = 11
 gtk-titlebar = false
+macos-option-as-alt = true
