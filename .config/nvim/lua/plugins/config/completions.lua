@@ -27,16 +27,33 @@ cmp.setup({
 	sources = cmp.config.sources({
 		-- { name = "nvim_lsp" },
 		-- { name = "vsnip" }, -- For vsnip users.
-		{ name = "luasnip", group_index = 0 }, -- For luasnip users.
-		{ name = "nvim_lsp", group_index = 0 },
-		{ name = "codeium", group_index = 0 },
-		{ name = "render-markdown", group_index = 0 },
-		{ name = "buffer", group_index = 0 },
-		{ name = "copilot", group_index = 0 },
+		{ name = "luasnip", group_index = 2 }, -- For luasnip users.
+		{ name = "nvim_lsp", group_index = 2 },
+		-- { name = "codeium", group_index = 2 },
+		{ name = "render-markdown", group_index = 2 },
+		{ name = "buffer", group_index = 2 },
+		{ name = "copilot", group_index = 3 },
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
-	}, {
-	}),
+	}, {}),
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      require("copilot_cmp.comparators").prioritize,
+
+      -- Below is the default comparitor list and order for nvim-cmp
+      cmp.config.compare.offset,
+      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol_text", -- show only symbol annotations
