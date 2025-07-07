@@ -43,6 +43,7 @@ alias nzp='fzp --bind "enter:become(nvim {})" --tmux center,90%,50%'
 alias sp='source .venv/bin/activate'
 alias k='sudo kubectl'
 alias ddev='dagster dev'
+alias python='~/.asdf/installs/python/3.11.9/bin/python'
 alias ghd='gh dash'
 
 ## functions
