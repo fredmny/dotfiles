@@ -8,11 +8,18 @@ prSections:
   - title: Involved
     filters: is:open involves:@me -author:@me
     type: null
-  - title: DP Open
-    filters: repo:Branching-Minds/datalake-pipelines is:open
+  - title: All Open
+    filters: is:open
     type: null
-  - title: DP Closed
-    filters: repo:Branching-Minds/datalake-pipelines is:closed
+  - title: All Closed
+    filters: is:closed
+    type: null
+  - title: Axon Open
+    filters: |
+      is:open 
+      repo:Branching-Minds/datalake-pipelines 
+      repo:Branching-Minds/data-workflows 
+      repo:Branching-Minds/databricks-data-workflows
     type: null
 issuesSections:
   - title: My Issues
@@ -21,13 +28,19 @@ issuesSections:
     filters: is:open assignee:@me
   - title: Involved
     filters: is:open involves:@me -author:@me
+  - title: All Open
+    filters: is:open
+    type: null
+  - title: All Closed
+    filters: is:closed
+    type: null
 repo:
   branchesRefetchIntervalSeconds: 30
   prsRefetchIntervalSeconds: 60
 defaults:
   preview:
     open: true
-    width: 50
+    width: 80
   prsLimit: 20
   prApproveComment: LGTM
   issuesLimit: 20
@@ -73,6 +86,7 @@ keybindings:
       name: lazygit
       command: >
         cd {{.RepoPath}} && lazygit
+
   prs:
     - key: O
       builtin: checkout
@@ -80,28 +94,29 @@ keybindings:
     #   command: gh pr merge --admin --repo {{.RepoName}} {{.PrNumber}}
     - key: M
       name: Auto-Merge
-      command: gh pr merge --auto --repo {{.RepoName}} {{.PrNumber}}
+      command: gh pr merge --auto --squash --delete-branch --repo {{.RepoName}} {{.PrNumber}}
+    - key: U
+      name: Update Branch
+      command: gh api repos/{{.RepoName}}/pulls/{{.PrNumber}}/update-branch -X PUT
     - key: C
       name: code review
       command: >
-        tmux new-window -c {{.RepoPath}} '
-        nvim -c ":silent Octo pr edit {{.PrNumber}}"
-        '
-    # - key: b
-    #   name: code review
-    #   command: cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json statusCheckRollup | command jq -rcj '.statusCheckRollup.[] | select(.context == "buildkite/mono") | .targetUrl' | xargs open
+        tmux new-window -c {{.RepoPath}} ' nvim -c ":silent Octo pr edit {{.PrNumber}}" '
+
     - key: a
       name: lazygit add
       command: >
         cd {{.RepoPath}} && git add -A && lazygit
+
     - key: v
       name: approve
       command: >
         gh pr review --repo {{.RepoName}} --approve --body "$(gum input --prompt='Approval Comment: ')" {{.PrNumber}}
+
   issues: []
   branches: []
 repoPaths:
-  Branching-Minds/datalake-pipelines: ~/brm_repos/datalake-pipelines-workdir/datalake-pipelines
+  Branching-Minds/datalake-pipelines: ~/brm_repos/datalake-pipelines-workdir/pr_review
 theme:
   ui:
     sectionsShowCount: true
