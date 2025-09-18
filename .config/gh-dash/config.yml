@@ -20,6 +20,7 @@ prSections:
       repo:Branching-Minds/datalake-pipelines 
       repo:Branching-Minds/data-workflows 
       repo:Branching-Minds/databricks-data-workflows
+      repo:Branching-Minds/bifrost
     type: null
 issuesSections:
   - title: My Issues
@@ -117,6 +118,8 @@ keybindings:
   branches: []
 repoPaths:
   Branching-Minds/datalake-pipelines: ~/brm_repos/datalake-pipelines-workdir/pr_review
+  Branching-Minds/infrastructure-live: ~/brm_repos/infrastructure-live
+  Branching-Minds/bifrost: ~/brm_repos/bifrost
 theme:
   ui:
     sectionsShowCount: true
