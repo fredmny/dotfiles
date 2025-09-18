@@ -1,6 +1,8 @@
 require("snacks").setup({
 	zen = { enabled = true },
 	gitbrowse = { enabled = true },
+  image = { enabled = true},
+  indent = { enabled = true },
 	dashboard = {
 		enabled = true,
 		sections = {
@@ -26,7 +28,7 @@ require("snacks").setup({
 		margin = { top = 0, right = 1, bottom = 0 },
 		padding = true, -- add 1 cell of left/right padding to the notification window
 		sort = { "level", "added" }, -- sort by level and time
-    styles = 'expanded',
+		styles = "expanded",
 		-- minimum log level to display. TRACE is the lowest
 		-- all notifications are stored in history
 		level = vim.log.levels.TRACE,
@@ -51,6 +53,35 @@ require("snacks").setup({
 		more_format = " ↓ %d lines ",
 		refresh = 50, -- refresh at most every 50ms
 	},
+})
+
+-- NOTE: Version below used for debugging
+-- -- Debug autocmd to see what's happening
+-- vim.api.nvim_create_autocmd({ "BufEnter", "FileType", "BufRead" }, {
+-- 	callback = function(ev)
+-- 		local bufname = vim.api.nvim_buf_get_name(0)
+-- 		local filetype = vim.bo.filetype
+-- 		if bufname:match("snacks") or filetype:match("snacks") or filetype == "" then
+-- 			print("Event:", ev.event, "Bufname:", bufname, "Filetype:", filetype)
+-- 			vim.b.minitrailspace_disable = true
+-- 			pcall(function()
+-- 				require('mini.trailspace').unhighlight()
+-- 			end)
+-- 		end
+-- 	end,
+-- })
+--
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		local bufname = vim.api.nvim_buf_get_name(0)
+		local filetype = vim.bo.filetype
+
+		-- Check if this is a Snacks dashboard buffer
+		if filetype:match("snacks") or filetype == "" then
+			vim.b.minitrailspace_disable = true
+		end
+	end,
 })
 
 local Snacks = require("snacks")

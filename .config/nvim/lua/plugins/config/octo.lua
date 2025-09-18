@@ -38,7 +38,7 @@ require("octo").setup({
 	user_icon = " ", -- user icon
 	ghost_icon = "󰊠 ", -- ghost icon
 	timeline_marker = " ", -- timeline marker
-	timeline_indent = "2", -- timeline indentation
+	timeline_indent = 2, -- timeline indentation
 	use_timeline_icons = true, -- toggle timeline icons
 	timeline_icons = { -- the default icons based on timelineItems
 		commit = "  ",
@@ -275,3 +275,5 @@ require("octo").setup({
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>O", ":Octo<CR>", { desc = "Octo" })
+vim.keymap.set({ "n", "v" }, "<leader>gP", ":Octo pr create<CR>", { desc = "Create PR with Octo" })
+vim.keymap.set({ "n", "v" }, "<leader>gvs", ":Octo review start<CR>", { desc = "Start PR review" })

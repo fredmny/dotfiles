@@ -146,8 +146,8 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
-	-- For displaying indentation
-	"lukas-reineke/indent-blankline.nvim",
+	-- -- For displaying indentation
+	-- "lukas-reineke/indent-blankline.nvim",
 
 	-- COMPLETIONS --
 	"hrsh7th/nvim-cmp",

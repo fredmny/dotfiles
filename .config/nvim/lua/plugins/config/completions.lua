@@ -32,14 +32,14 @@ cmp.setup({
 		-- { name = "codeium", group_index = 2 },
 		{ name = "render-markdown", group_index = 2 },
 		{ name = "buffer", group_index = 2 },
-		{ name = "copilot", group_index = 3 },
+		-- { name = "copilot", group_index = 3 },
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {}),
   sorting = {
     priority_weight = 2,
     comparators = {
-      require("copilot_cmp.comparators").prioritize,
+      -- require("copilot_cmp.comparators").prioritize,
 
       -- Below is the default comparitor list and order for nvim-cmp
       cmp.config.compare.offset,
