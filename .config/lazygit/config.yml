@@ -1,0 +1,9 @@
+# For MacOS link ~/Library/Application\ Support/lazygit/config.yml to this file
+---
+gui:
+  branchColorPatterns:
+    'fix': '#e06666'
+    'feat': '#2cce83'
+    'chore': '#e69138'
+    'develop': '#b196ff'
+    'main': '#48a8ff'
