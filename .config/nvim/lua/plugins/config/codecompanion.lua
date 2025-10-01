@@ -21,6 +21,20 @@ require("codecompanion").setup({
 			})
 		end,
 	},
+	memory = {
+		opts = {
+			chat = {
+				enabled = true,
+			},
+		},
+		agno = {
+			description = "Memory files for Agno AI",
+      parser = "claude",
+			files = {
+				vim.fn.expand("~/.config/nvim/llm-context/agno-ai.txt"),
+			},
+		},
+	},
 	display = {
 		chat = {
 			window = {
@@ -71,11 +85,11 @@ require("codecompanion").setup({
 			strategy = "chat",
 			description = "Review code for quality and issues",
 			opts = {
-        short_name = "review",
+				short_name = "review",
 				auto_submit = true, -- Automatically submit the prompt after filling in the code
 				stop_context_insertion = true, -- Stop inserting context when the prompt is submitted
 				user_prompt = true,
-        contains_code = true, -- Whether the prompt contains code
+				contains_code = true, -- Whether the prompt contains code
 			},
 			prompts = {
 				{
@@ -92,13 +106,12 @@ require("codecompanion").setup({
 							.. "Evaluate if the change really makes sense before suggesting it. "
 							.. "You should enumerate the codeblock for each suggested change, "
 							.. "so that it can be easily referred to in the following of the conversation. "
-              -- .. "After showing the initial review you should apply each change, if the user confirms it. "
-              -- .. "For this suggest the first change - then wait for confirmation - suggest the second change - wait for confirmation ... and so on"
-              .. "\n\n"
-              .. "#buffer"
-              .. "\n"
-              .. "@editor"
-
+							-- .. "After showing the initial review you should apply each change, if the user confirms it. "
+							-- .. "For this suggest the first change - then wait for confirmation - suggest the second change - wait for confirmation ... and so on"
+							.. "\n\n"
+							.. "#buffer"
+							.. "\n"
+							.. "@editor"
 					end,
 					opts = {
 						contains_code = true,
