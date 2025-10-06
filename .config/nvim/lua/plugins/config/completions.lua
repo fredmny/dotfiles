@@ -1,6 +1,6 @@
 local lspkind = require("lspkind")
 local cmp = require("cmp")
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets" } })
 
 cmp.setup({
 	snippet = {
@@ -37,24 +37,24 @@ cmp.setup({
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {}),
-  sorting = {
-    priority_weight = 2,
-    comparators = {
-      -- require("copilot_cmp.comparators").prioritize,
+	sorting = {
+		priority_weight = 2,
+		comparators = {
+			-- require("copilot_cmp.comparators").prioritize,
 
-      -- Below is the default comparitor list and order for nvim-cmp
-      cmp.config.compare.offset,
-      -- cmp.config.compare.scopes, --this is commented in nvim-cmp too
-      cmp.config.compare.exact,
-      cmp.config.compare.score,
-      cmp.config.compare.recently_used,
-      cmp.config.compare.locality,
-      cmp.config.compare.kind,
-      cmp.config.compare.sort_text,
-      cmp.config.compare.length,
-      cmp.config.compare.order,
-    },
-  },
+			-- Below is the default comparitor list and order for nvim-cmp
+			cmp.config.compare.offset,
+			-- cmp.config.compare.scopes, --this is commented in nvim-cmp too
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			cmp.config.compare.recently_used,
+			cmp.config.compare.locality,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
+	},
 	formatting = {
 		format = lspkind.cmp_format({
 			mode = "symbol_text", -- show only symbol annotations

@@ -1,0 +1,8 @@
+{
+  "python-test-snippet": {
+    "prefix": ["trig", "fredsnip"],
+    "body": ["this is $1", "a different snippet $2"],
+    "description": "Another snippet-description.",
+    "scope": "python"
+  }
+}
