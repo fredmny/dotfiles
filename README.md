@@ -10,7 +10,7 @@ These are the configuration files for my Arch Linux installation
 - **Window Manager:** Qtile 
 - **Shell:** zsh (+oh\_my\_zsh)
     - **Theme:** PowerLevel10k
-- **Terminal:** termite/ghostty
+- **Terminal:** ghostty
 - **Terminal multiplexer:** tmux
 - **TUI File Manager:** 
     - Ranger (with ueberzug to visualize images)
@@ -21,7 +21,7 @@ These are the configuration files for my Arch Linux installation
 - **GUI File Manager:** pcmanfm
 - **Audio Player:** Spotify - controlled through spotify-tui
 - **System Monitoring Dashboard:** gtop
-- **GTK Appearance Management:** lxappearance
+- **GTK Appearance Management:** nwg-look (Previouslya: lxappearance)
 - **Browser:** firefox / Zen
 - **Video Player:** mpv
 - **Screenshot tool:** [flameshot](https://flameshot.org/)

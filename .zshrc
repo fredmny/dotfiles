@@ -119,7 +119,7 @@ fi
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 #
 # >>> conda initialize >>>
 ## !! Contents within this block are managed by 'conda init' !!
@@ -136,7 +136,7 @@ fi
 #unset __conda_setup
 # <<< conda initialize <<<
 
-. /opt/asdf-vm/asdf.sh
+# . /opt/asdf-vm/asdf.sh
 
 autoload -Uz compinit
 compinit
@@ -154,10 +154,10 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 # Enabling zoxide
-eval "$(zoxide init zsh --cmd cd)" 
+eval "$(zoxide init zsh --cmd z)" 
 
 # Show colorful script
-colorscript --random
+# colorscript --random
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/prophet/packages/google-cloud-sdk/path.zsh.inc' ]; then . '/home/prophet/packages/google-cloud-sdk/path.zsh.inc'; fi

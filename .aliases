@@ -46,6 +46,11 @@ alias sp='source .venv/bin/activate'
 alias k='sudo kubectl'
 alias ddev='dagster dev'
 alias ghd='gh dash'
+#hyprland
+alias hmon='/home/prophet/.config/hypr/scripts/monitor-switch.sh'
+alias hmond='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked'
+alias hmond2='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked2'
+alias hmonm='/home/prophet/.config/hypr/scripts/monitor-switch.sh mobile'
 
 ## functions
 mcd () {
