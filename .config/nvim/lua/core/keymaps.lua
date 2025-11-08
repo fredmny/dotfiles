@@ -48,12 +48,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 -- none-ls related
--- DAP (debugger)
-vim.keymap.set("n", "<Leader>db", function()
-	require("dap").toggle_breakpoint()
-end)
-vim.keymap.set("n", "<Leader>dc", function()
-	require("dap").continue()
-end)
 -- Misc
 vim.keymap.set("n", "<Leader>bt", ":tabnew %<CR>", { desc = "Open current buffer in new tab" })
