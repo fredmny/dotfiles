@@ -80,8 +80,8 @@
 
   // Right Section Modules
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "󰝟  Muted",
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
     "format-icons": {
       "headphone": "󰋋",
       "hands-free": "󰋎",
@@ -96,22 +96,22 @@
   },
 
   "network": {
-    "format-wifi": "󰤨  {essid}",
-    "format-ethernet": "󰈀  Connected",
-    "format-disconnected": "󰤭  Disconnected",
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 Connected",
+    "format-disconnected": "󰤭 Disconnected",
     "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n󰈀 {ipaddr}/{cidr}",
     "on-click": "nm-connection-editor",
   },
 
   "cpu": {
-    "format": "󰻠  {usage}%",
+    "format": "󰻠 {usage}%",
     "interval": 2,
     "tooltip": true,
   },
 
   "memory": {
-    "format": "󰍛  {percentage}%",
+    "format": "󰍛 {percentage}%",
     "interval": 2,
     "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
   },
@@ -121,9 +121,9 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "{icon}  {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
-    "format-plugged": "󰚥  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{timeTo}",
   },
