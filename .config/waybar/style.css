@@ -1,127 +1,157 @@
-@import "mocha.css"; 
-
 * {
-    font-family: "MesloLGS Nerd Font Mono Bold";
-    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    font-family: "Agave Nerd Font", "Liberation Sans", sans-serif;
+    font-size: 13px;
     min-height: 0;
-    font-weight: bold;
 }
 
 window#waybar {
     background: transparent;
-    background-color: @crust;
-    color: @overlay0;
-    transition-property: background-color;
-    transition-duration: 0.1s;
-    border-bottom: 1px solid @overlay1;
 }
 
-#window {
-    margin: 8px;
-    padding-left: 8;
-    padding-right: 8;
+tooltip {
+    background: rgba(30, 30, 46, 0.95);
+    border: 2px solid rgba(137, 180, 250, 0.5);
+    border-radius: 8px;
+    padding: 10px;
 }
 
-button {
-    box-shadow: inset 0 -3px transparent;
-    border: none;
-    border-radius: 0;
+tooltip label {
+    color: #cdd6f4;
 }
 
-button:hover {
-    background: inherit;
-    color: @mauve;
-    border-top: 2px solid @mauve;
+.modules-left {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 6px;
+    margin: 2px 0 2px 2px;
+    padding: 0 8px;
+    border: 2px solid rgba(137, 180, 250, 0.3);
+}
+
+.modules-center {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 6px;
+    margin: 2px;
+    padding: 0 8px;
+    border: 2px solid rgba(137, 180, 250, 0.3);
+}
+
+.modules-right {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 6px;
+    margin: 2px 2px 2px 0;
+    padding: 0 8px;
+    border: 2px solid rgba(137, 180, 250, 0.3);
+}
+
+#workspaces {
+    padding: 0 2px;
 }
 
 #workspaces button {
-    padding: 0 4px;
+    padding: 0 2px;
+    margin: 4px 2px;
+    color: #89b4fa;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-#workspaces button.focused {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @rosewater;
-    border-top: 2px solid @rosewater;
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.2);
+    color: #cdd6f4;
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.3);
-    color: @mauve;
-    border-top: 2px solid @mauve;
+    background: rgba(137, 180, 250, 0.4);
+    color: #1e1e2e;
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background: rgba(243, 139, 168, 0.4);
+    color: #f38ba8;
 }
 
-#pulseaudio,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#wireplumber,
-#tray,
-#network,
-#mode,
-#scratchpad {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+#window {
+    color: #cdd6f4;
+    padding: 0 12px;
+    margin: 4px 8px;
 }
 
 #clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
-}
-
-#clock.date {
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
+    color: #f5c2e7;
+    font-weight: bold;
+    padding: 0 4px;
 }
 
 #pulseaudio {
-    color: @blue;
-    border-bottom: 2px solid @blue;
+    color: #89b4fa;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
 }
 
 #network {
-    color: @yellow;
-    border-bottom: 2px solid @yellow;
+    color: #94e2d5;
+    padding: 0 10px;
 }
 
-#idle_inhibitor {
-    margin-right: 12px;
-    color: #7cb342;
+#network.disconnected {
+    color: #f38ba8;
 }
 
-#idle_inhibitor.activated {
-    color: @red;
+#cpu {
+    color: #f9e2af;
+    padding: 0 10px;
+}
+
+#memory {
+    color: #fab387;
+    padding: 0 10px;
 }
 
 #battery {
-    color: @green;
-    border-bottom: 2px solid @green;
+    color: #a6e3a1;
+    padding: 0 10px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
+#battery.charging {
+    color: #89b4fa;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
+#battery.warning:not(.charging) {
+    color: #f9e2af;
 }
 
-#custom-vpn {
-    color: @lavender;
-    border-radius: 15px;
-    padding-left: 6px;
-    padding-right: 6px;
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+}
+
+#tray {
+    padding: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.3);
+    border-radius: 8px;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#clock:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
