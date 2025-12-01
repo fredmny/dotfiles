@@ -5,5 +5,5 @@ require("todo-comments").setup({
 	},
 })
 
-vim.keymap.set('n', '<leader>tta', ':TodoTelescope <cr>')
-vim.keymap.set('n', '<leader>ttf', ':TodoTelescope cwd=%:p:h <cr>')
+vim.keymap.set('n', '<leader>tta', ':TodoTelescope <cr>', { desc = "Show all TODOs" })
+vim.keymap.set('n', '<leader>ttf', ':TodoTelescope cwd=%:p:h <cr>', { desc = "Show TODOs in current file directory" })
