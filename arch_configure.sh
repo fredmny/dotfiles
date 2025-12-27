@@ -25,7 +25,8 @@ sudo pacman -Syy \
 	git \
   github-cli \
   base-devel \
-  luarocks
+  luarocks \
+  lazygit
 
 ## Install yay
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -33,6 +34,9 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 ## Install aur packages
 yay -S opencode-bin
 yay -S ascii-image-converter-git
+
+## Install other packages
+curl -fsSL https://pkgs.netbird.io/install.sh | sh
 
 # # Configure Displayling
 # sudo pacman -Sy linux-headers # Might be necessary to replace with `linux-lts-headers`
