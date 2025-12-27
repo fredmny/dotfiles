@@ -7,7 +7,7 @@ These are the configuration files for my Arch Linux installation
 ![Screenshot 03](./.screenshots/screenshot_03.png)
 
 ## Used Applications
-- **Window Manager:** Qtile 
+- **Window Manager:** Wayland (the images above are still from Qtile, which I used before)
 - **Shell:** zsh (+oh\_my\_zsh)
     - **Theme:** PowerLevel10k
 - **Terminal:** ghostty
@@ -28,6 +28,7 @@ These are the configuration files for my Arch Linux installation
 - **Audo Engine:** [Pipewire](https://pipewire.org/) with [EasyEffects](https://github.com/wwmm/easyeffects) to control it
 - **Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Note taking:** Obsidian
+- **Notifications:** [mako](https://github.com/emersion/mako)
 - **Misc terminal tools:**
     - fzf
     - lazygit

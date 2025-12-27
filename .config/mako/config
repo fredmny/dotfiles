@@ -1,0 +1,41 @@
+## Mako Configuration
+
+# General
+sort=-time
+layer=overlay
+background-color=#1e1e2ef2
+width=300
+height=110
+border-size=3
+border-color=#89b4fa
+border-radius=8
+icons=1
+max-icon-size=64
+default-timeout=3000
+ignore-timeout=1
+font=Agave Nerd Font 13
+margin=10
+padding=10
+
+# Text Colors
+text-color=#cdd6f4
+# Summary is bold in waybar tooltips, so let's try to mimic that differentiation if possible, 
+# but mako just has format.
+format=<b>%s</b>\n%b
+
+[urgency=low]
+border-color=#1e1e2e
+default-timeout=2000
+
+[urgency=normal]
+border-color=#89b4fa
+default-timeout=3000
+
+[urgency=high]
+border-color=#f38ba8
+text-color=#f38ba8
+default-timeout=0
+
+[category=mpd]
+default-timeout=2000
+group-by=category
