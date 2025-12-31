@@ -6,6 +6,7 @@ sudo pacman -Syyu
 
 sudo pacman -Syy \
   gnome-keyring \
+  jq \
 	npm \
   rust \
 	rofi \
