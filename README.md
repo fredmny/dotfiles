@@ -11,6 +11,7 @@ These are the configuration files for my Arch Linux installation
 ## Used Applications
 
 - **Window Manager:** Wayland (the images above are still from Qtile, which I used before)
+- **Display Manager (login):** sddm
 - **Shell:** zsh (+oh_my_zsh)
   - **Theme:** PowerLevel10k
 - **Terminal:** ghostty

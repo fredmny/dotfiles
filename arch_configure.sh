@@ -13,6 +13,7 @@ sudo pacman -Syy \
 	nwg-look \
 	tmux \
 	waybar \
+  sddm \
 	zsh \
 	zoxide \
 	man-db \
@@ -21,6 +22,7 @@ sudo pacman -Syy \
 	hypridle \
 	hyprpaper \
 	hyprlock \
+  brightnessctl \
 	ghostty \
 	git \
   github-cli \
@@ -75,4 +77,3 @@ ln -s ${dotfiles_dir}/.zshrc $HOME/.zshrc
 # TODO: Add to script
 # - oh-my-zsh install
 # - powerlevel10k install
-# - yay install
