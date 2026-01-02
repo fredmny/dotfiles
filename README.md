@@ -33,6 +33,7 @@ These are the configuration files for my Arch Linux installation
 - **Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Note taking:** Obsidian
 - **Notifications:** [mako](https://github.com/emersion/mako)
+- **Clipboard Manager:** [clipcat](https://github.com/xrelkd/clipcat)
 - **Misc terminal tools:**
   - fzf
   - lazygit
