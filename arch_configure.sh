@@ -10,6 +10,8 @@ sudo pacman -Syy \
 	npm \
   rust \
 	rofi \
+  rofi-emoji \
+  wl-clipboard \
 	neovim \
 	nwg-look \
 	tmux \
@@ -67,12 +69,14 @@ create_config_symlink flameshot
 create_config_symlink lazygit
 create_config_symlink tmux
 create_config_symlink gh-dash
+create_config_symlink clipcat
 
 ln -s ${dotfiles_dir}/.aliases $HOME/.aliases
 ln -s ${dotfiles_dir}/.tmux.conf $HOME/.tmux.conf
 ln -s ${dotfiles_dir}/.zshrc $HOME/.zshrc
 
 
+chmod +x ~/.config/rofi/scripts/rofi-power.sh
 # Configure nvim
 
 # TODO: Add to script
