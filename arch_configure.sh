@@ -12,6 +12,7 @@ sudo pacman -Syy \
 	rofi \
   rofi-emoji \
   wl-clipboard \
+  clipcat \
 	neovim \
 	nwg-look \
 	tmux \
@@ -39,6 +40,7 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 ## Install aur packages
 yay -S opencode-bin
 yay -S ascii-image-converter-git
+yay -S rofi-greenclip
 
 ## Install other packages
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
@@ -76,7 +78,11 @@ ln -s ${dotfiles_dir}/.tmux.conf $HOME/.tmux.conf
 ln -s ${dotfiles_dir}/.zshrc $HOME/.zshrc
 
 
+# Change file permissions
+
 chmod +x ~/.config/rofi/scripts/rofi-power.sh
+chmod +x ~/.config/hypr/scripts/rotate-wallpaper.sh
+
 # Configure nvim
 
 # TODO: Add to script
