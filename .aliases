@@ -47,6 +47,7 @@ alias k='sudo kubectl'
 alias ddev='dagster dev'
 alias ghd='gh dash'
 #hyprland
+alias h='hyprctl --instance 0' # Reasone for `--instance 0`: https://github.com/hyprwm/Hyprland/issues/3134
 alias hmon='/home/prophet/.config/hypr/scripts/monitor-switch.sh'
 alias hmond='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked'
 alias hmond2='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked2'
