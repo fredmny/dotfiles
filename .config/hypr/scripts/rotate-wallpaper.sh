@@ -6,10 +6,12 @@ WALLPAPER_DIR="$HOME/.config/wallpaper/selection"
 CONFIG_FILE="$HOME/.config/hypr/hyprpaper.conf"
 
 # Get a random wallpaper
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) | shuf -n 1)
+WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
 # Update hyprpaper config
 cat > "$CONFIG_FILE" << EOF
 preload = $WALLPAPER
 wallpaper = , $WALLPAPER
-E
+splash=true
+ipc=true
+EOF
