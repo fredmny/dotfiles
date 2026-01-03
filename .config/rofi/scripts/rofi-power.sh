@@ -1,18 +1,18 @@
 #!/bin/bash
 
-chosen=$(printf "Logout\nReboot\nShutdown\nSuspend" | rofi -dmenu -p "Power:")
+chosen=$(printf "shutdown\nreboot\nlogout\nsuspend" | rofi -dmenu -p "Power:")
 
 case "$chosen" in
-    Logout)
+    logout)
         hyprctl dispatch exit
         ;;
-    Reboot)
+    reboot)
         systemctl reboot
         ;;
-    Shutdown)
+    shutdown)
         systemctl poweroff
         ;;
-    Suspend)
+    suspend)
         systemctl suspend
         ;;
 esac

@@ -32,6 +32,7 @@ sudo pacman -Syy \
   github-cli \
   base-devel \
   luarocks \
+  tldr \
   lazygit
 
 ## Install yay
@@ -44,6 +45,7 @@ yay -S rofi-greenclip
 
 ## Install other packages
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
+gh extension install dlvhdr/gh-dash
 
 # # Configure Displayling
 # sudo pacman -Sy linux-headers # Might be necessary to replace with `linux-lts-headers`
