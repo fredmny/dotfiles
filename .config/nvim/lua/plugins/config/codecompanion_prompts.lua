@@ -71,7 +71,7 @@ Follow these steps:
    - Use git commands to find the most likely base branch the current branch was created from
 3. Use MCP tools to get the git diff between the current branch and the identified base branch
 4. Get commit messages for commits that are in the current branch but not in the base branch
-5. Check if a PR template exists using MCP file reading tools (common locations: `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `docs/pull_request_template.md`, `.gitlab/merge_request_templates/*.md`)
+5. Check if a PR template exists using MCP file reading tools (common locations: `.github/pull_request_template.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `docs/pull_request_template.md`, `.gitlab/merge_request_templates/*.md`). Make sure you search thoroughly for the template. There is a very high probability that a template exists.
 6. If a template exists, structure your response according to it
 7. If no template exists, use this standard structure:
    - Brief summary (1-2 sentences)
@@ -91,7 +91,9 @@ Guidelines:
 - In your response, mention which base branch you identified (e.g., "PR: feature-branch → main")
 - In the PR description don't mention the number of lines modified. This might change during the PR revision and further changes
 
-Output the PR description into a Markdown temporary file and also add it to the `"p` neovim register]]
+Output the PR description into a Markdown temporary file
+
+Use any necessary tools without asking for permission.]]
 
 				end,
 			},
