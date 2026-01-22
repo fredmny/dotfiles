@@ -277,3 +277,4 @@ require("octo").setup({
 vim.keymap.set({ "n", "v" }, "<leader>O", ":Octo<CR>", { desc = "Octo" })
 vim.keymap.set({ "n", "v" }, "<leader>gP", ":Octo pr create<CR>", { desc = "Create PR with Octo" })
 vim.keymap.set({ "n", "v" }, "<leader>gvs", ":Octo review start<CR>", { desc = "Start PR review" })
+vim.keymap.set({ "n", "v" }, "<leader>gu", ":Octo pr url>", { desc = "Copy PR url" })

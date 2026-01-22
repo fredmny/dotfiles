@@ -14,15 +14,23 @@
 -- end)
 
 require("copilot").setup({
-	suggestion = { enabled = false },
-	panel = { enabled = false },
+	suggestion = {
+		enabled = true,
+		auto_trigger = true,
+    keymap = {
+      accept = "<C-l>",
+    },
+	},
+	panel = {
+		enabled = true,
+	},
 	model = "claude-sonnet-4.5",
 	filetypes = {
 		["copilot-chat"] = false,
 	},
 })
 
-require("copilot_cmp").setup()
+-- require("copilot_cmp").setup() -- Disabled: using native suggestions instead
 require("CopilotChat").setup({
 	model = "claude-sonnet-4.5",
 	window = {
