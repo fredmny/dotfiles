@@ -33,7 +33,11 @@ sudo pacman -Syy \
   base-devel \
   luarocks \
   tldr \
-  lazygit
+  lazygit \
+  bluez \
+  bluez-utils \
+  bluez-deprecated-tools \
+  bluetui
 
 ## Install yay
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -54,6 +58,11 @@ gh extension install dlvhdr/gh-dash
 # sudo modprobe udl
 # systemctl enable displayink.service
 # systemctl start displayink.service
+
+# Enable bluetooth
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
+
 
 dotfiles_dir=$HOME/dotfiles
 #
