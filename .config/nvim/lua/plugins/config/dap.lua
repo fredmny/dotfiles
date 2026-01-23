@@ -16,18 +16,47 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
 	dapui.close()
 end
+
 -- Debuggers
--- Requires debugpy in specified folder
--- require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
--- To use with globally installed debugpy uncomment below
+-- Python
 require("dap-python").setup("python")
+
+-- Node.js/TypeScript
+dap.adapters['pwa-node'] = {
+	type = 'server',
+	host = 'localhost',
+	port = '${port}',
+	executable = {
+		command = 'node',
+		args = {
+			vim.fn.stdpath("data") .. '/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
+			'${port}'
+		},
+	}
+}
+
+dap.configurations.typescript = {
+	{
+		type = 'pwa-node',
+		request = 'launch',
+		name = 'Launch TypeScript',
+		runtimeArgs = {'-r', 'ts-node/register'},
+		args = {'${file}'},
+		cwd = '${workspaceFolder}',
+		sourceMaps = true,
+		protocol = 'inspector',
+	},
+}
+
+-- Use same config for JavaScript
+dap.configurations.javascript = dap.configurations.typescript
 
 -- To setup more debuggers refer to
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 
 require("dap.ext.vscode").load_launchjs(nil, {})
---
--- DAP (debugger)
+
+-- DAP (debugger) keymaps
 vim.keymap.set("n", "<Leader>db", function()
 	require("dap").toggle_breakpoint()
 end, {desc = "DAP: Toggle breakpoint"})
@@ -55,3 +84,6 @@ end, {desc = "DAP: Step out"})
 vim.keymap.set("n", "<Leader>do", function()
 	require("dap").step_over()
 end, {desc = "DAP: Step over"})
+vim.keymap.set("n", "<Leader>du", function()
+  require('dapui').toggle()
+end, {desc = "DAP: Toggle UI"})
