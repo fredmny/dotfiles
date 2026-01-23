@@ -37,8 +37,35 @@ require("codecompanion").setup({
 			},
 		},
 	},
-	display = {
+    display = {
+      diff = {
+        provider_opts = {
+          split = {
+            close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
+            layout = "vertical", -- vertical|horizontal split
+            opts = {
+              "internal",
+              "filler",
+              "closeoff",
+              "algorithm:histogram", -- https://adamj.eu/tech/2024/01/18/git-improve-diff-histogram/
+              "indent-heuristic", -- https://blog.k-nut.eu/better-git-diffs
+              "followwrap",
+              "linematch:120",
+            },
+          },
+        },
+      },
 		chat = {
+      auto_scroll = false,
+      variables = {
+        ["buffer"] = {
+          opts = {
+            -- Always sync the buffer by sharing its "diff"
+            -- Or choose "all" to share the entire buffer
+            default_params = "diff",
+          },
+        },
+      },
 			window = {
 				layout = "vertical", -- float|vertical|horizontal|buffer
 				position = "right", -- left|right|top|bottom (nil will default depending on vim.opt.splitright|vim.opt.splitbelow)
@@ -61,6 +88,22 @@ require("codecompanion").setup({
 				},
 			},
 		},
+    interactions = {
+      chat = {
+        -- The following decorates the prompt before sending it to the LLM
+        -- Enclosing it in <prmompt> tags is how VS Code does it to make it clear this is user input
+        opts = {
+          ---Decorate the user message before it's sent to the LLM
+          ---@param message string
+          ---@param adapter CodeCompanion.Adapter
+          ---@param context table
+          ---@return string
+          prompt_decorator = function(message, adapter, context)
+            return string.format([[<prompt>%s</prompt>]], message)
+          end,
+        }
+      }
+    },
 		action_palette = {
 			width = 95,
 			height = 10,
