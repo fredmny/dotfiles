@@ -57,6 +57,17 @@ require("codecompanion").setup({
       },
 		chat = {
       auto_scroll = false,
+      icons = {
+        buffer_sync_all = "󰪴 ",
+        buffer_sync_diff = " ",
+        chat_context = " ",
+        chat_fold = " ",
+        tool_pending = "  ",
+        tool_in_progress = "  ",
+        tool_failure = "  ",
+        tool_success = "  ",
+      },
+      fold_context = true,
       variables = {
         ["buffer"] = {
           opts = {
@@ -101,6 +112,7 @@ require("codecompanion").setup({
           prompt_decorator = function(message, adapter, context)
             return string.format([[<prompt>%s</prompt>]], message)
           end,
+          -- completion_provider = "cmp",
         }
       }
     },
@@ -158,4 +170,7 @@ end, { noremap = true, silent = true, desc = "Review Code" })
 vim.keymap.set("n", "<leader>cpp", function()
 	require("codecompanion").prompt("pr_description")
 end, { noremap = true, silent = true, desc = "Create PR Description" })
+vim.keymap.set("n", "<leader>cb", function()
+	require("codecompanion").prompt("chat_with_buffer")
+end, { noremap = true, silent = true, desc = "Chat window with current buffer" })
 -- vim.keymap.set("v", "<leader>cm", ":CopilotChatCreateOnComment<CR>", { desc = "Create on Comment" })

@@ -2,6 +2,29 @@
 -- Custom prompts for CodeCompanion plugin
 
 return {
+	["Chat with buffer"] = {
+		strategy = "chat",
+		description = "Open a chat with the current buffer content",
+		opts = {
+			alias = "chat_with_buffer",
+			auto_submit = false, -- Automatically submit the prompt after filling in the code
+			stop_context_insertion = false, -- Stop inserting context when the prompt is submitted
+			user_prompt = false,
+			contains_code = true, -- Whether the prompt contains code
+		},
+		prompts = {
+			{
+				role = "user",
+				content = function(context)
+					return "#{buffer}"
+            .. ""
+				end,
+				opts = {
+					contains_code = true,
+				},
+			},
+		},
+	},
 	["Review code"] = {
 		strategy = "chat",
 		description = "Review code for quality and issues",
