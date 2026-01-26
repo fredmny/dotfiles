@@ -137,7 +137,13 @@ require("codecompanion").setup({
 			},
 		},
 	},
-	prompt_library = require("plugins.config.codecompanion_prompts"),
+	prompt_library = {
+		markdown = {
+			dirs = {
+				vim.fn.stdpath("config") .. "/.prompts",
+			},
+		},
+	},
 })
 
 vim.keymap.set({ "n", "v" }, "<leader>cc", ":CodeCompanionChat<CR>", { desc = "Chat with CodeCompanion" })
