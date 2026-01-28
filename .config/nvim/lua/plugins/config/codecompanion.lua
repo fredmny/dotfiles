@@ -56,7 +56,7 @@ require("codecompanion").setup({
         },
       },
 		chat = {
-      auto_scroll = false,
+      auto_scroll = true,
       icons = {
         buffer_sync_all = "󰪴 ",
         buffer_sync_diff = " ",
@@ -67,7 +67,7 @@ require("codecompanion").setup({
         tool_failure = "  ",
         tool_success = "  ",
       },
-      fold_context = true,
+      fold_context = false,
       variables = {
         ["buffer"] = {
           opts = {
@@ -103,17 +103,17 @@ require("codecompanion").setup({
       chat = {
         -- The following decorates the prompt before sending it to the LLM
         -- Enclosing it in <prmompt> tags is how VS Code does it to make it clear this is user input
-        opts = {
-          ---Decorate the user message before it's sent to the LLM
-          ---@param message string
-          ---@param adapter CodeCompanion.Adapter
-          ---@param context table
-          ---@return string
-          prompt_decorator = function(message, adapter, context)
-            return string.format([[<prompt>%s</prompt>]], message)
-          end,
-          -- completion_provider = "cmp",
-        }
+        -- opts = {
+        --   ---Decorate the user message before it's sent to the LLM
+        --   ---@param message string
+        --   ---@param adapter CodeCompanion.Adapter
+        --   ---@param context table
+        --   ---@return string
+        --   prompt_decorator = function(message, adapter, context)
+        --     return string.format([[<prompt>%s</prompt>]], message)
+        --   end,
+        --   -- completion_provider = "cmp",
+        -- }
       }
     },
 		action_palette = {
