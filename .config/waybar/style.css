@@ -1,3 +1,5 @@
+@import url("/home/prophet/.cache/wal/colors-waybar.css");
+
 * {
     border: none;
     border-radius: 0;
@@ -21,114 +23,114 @@ tooltip label {
     color: #cdd6f4;
 }
 
-.modules-left {
-    background: rgba(30, 30, 46, 0.85);
-    border-radius: 6px;
-    margin: 2px 0 2px 2px;
-    padding: 0 8px;
-    border: 2px solid rgba(137, 180, 250, 0.3);
-}
-
-.modules-center {
-    background: rgba(30, 30, 46, 0.85);
-    border-radius: 6px;
-    margin: 2px;
-    padding: 0 8px;
-    border: 2px solid rgba(137, 180, 250, 0.3);
-}
-
+.modules-left,
+.modules-center,
 .modules-right {
-    background: rgba(30, 30, 46, 0.85);
-    border-radius: 6px;
-    margin: 2px 2px 2px 0;
-    padding: 0 8px;
-    border: 2px solid rgba(137, 180, 250, 0.3);
-}
-
-#workspaces {
-    padding: 0 2px;
-}
-
-#workspaces button {
-    padding: 0 2px;
-    margin: 4px 2px;
-    color: #89b4fa;
-    background: transparent;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-#workspaces button:hover {
-    background: rgba(137, 180, 250, 0.2);
-    color: #cdd6f4;
-}
-
-#workspaces button.active {
-    background: rgba(137, 180, 250, 0.4);
-    color: #1e1e2e;
+    background: alpha(@background, 0.5);
+    border-radius: 10px;
+    margin: 4px;
+    padding: 0 10px;
+    border: 1px solid alpha(@color11, 0.5);
     font-weight: bold;
 }
 
+.modules-center{
+    padding: 0 0px;
+}
+
+#workspaces {
+    padding: 2px 6px;
+    background: @color0;
+    border-radius: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+#workspaces button {
+    padding: 4px 8px;
+    margin: 2px 4px;
+    color: @color6;
+    background: transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+#workspaces button:hover,
+#workspaces button.focused {
+    background: rgba(255, 255, 255, 0.08);
+    color: @color15;
+}
+
+#workspaces button.active {
+    background: @color4;
+    color: @color0;
+}
+
 #workspaces button.urgent {
-    background: rgba(243, 139, 168, 0.4);
-    color: #f38ba8;
+    background: @color1;
+    color: @color15;
 }
 
 #window {
-    color: #cdd6f4;
+    color: @foreground;
     padding: 0 12px;
     margin: 4px 8px;
 }
 
 #clock {
-    color: #f5c2e7;
+    color: @color5;
     font-weight: bold;
-    padding: 0 4px;
+    padding: 0 2px;
 }
 
 #pulseaudio {
-    color: #89b4fa;
+    color: @color6;
     padding: 0 10px;
 }
 
 #pulseaudio.muted {
-    color: #f38ba8;
+    color: @color3;
 }
 
 #network {
-    color: #94e2d5;
+    color: @color4;
     padding: 0 10px;
 }
 
 #network.disconnected {
-    color: #f38ba8;
+    color: @color1;
 }
 
 #cpu {
-    color: #f9e2af;
-    padding: 0 10px;
+    color: @color6;
+    padding: 0 2px;
 }
 
 #memory {
-    color: #fab387;
-    padding: 0 10px;
+    color: @color5;
+    padding: 0 2px;
+}
+
+#disk {
+    color: @color3;
+    padding: 0 2px;
 }
 
 #battery {
-    color: #a6e3a1;
+    color: @color2;
     padding: 0 10px;
 }
 
 #battery.charging {
-    color: #89b4fa;
+    color: @color6;
 }
 
 #battery.warning:not(.charging) {
-    color: #f9e2af;
+    color: @color5;
 }
 
 #battery.critical:not(.charging) {
-    color: #f38ba8;
+    color: @color1;
 }
 
 #tray {
@@ -145,13 +147,44 @@ tooltip label {
     border-radius: 8px;
 }
 
+#group-resources,
+#group-connectivity,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#disk,
+#battery,
+#clock,
+#bluetooth,
+#idle_inhibitor,
+#custom-updates {
+    margin: 0 4px;
+}
+
+#group-resources,
+#group-connectivity,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#disk,
+#battery,
+#clock,
+#bluetooth,
+#idle_inhibitor,
+#custom-updates {
+    margin: 0 4px;
+}
+
 #pulseaudio:hover,
 #network:hover,
 #cpu:hover,
 #memory:hover,
 #battery:hover,
-#clock:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+#clock:hover,
+#custom-updates:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    transition: all 0.2s ease;
 }
