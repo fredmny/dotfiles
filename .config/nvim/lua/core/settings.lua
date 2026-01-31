@@ -47,4 +47,5 @@ vim.o.swapfile = false
 -- Use mouse on all modes
 --vim.opt.mouse = "a"
 
+vim.o.termguicolors = true
 vim.cmd([[ set noswapfile ]])

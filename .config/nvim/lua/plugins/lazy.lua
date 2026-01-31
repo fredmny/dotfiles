@@ -230,7 +230,11 @@ require("lazy").setup({
     dependencies = {
       "kevinhwang91/promise-async",
     },
+  },
+  {
+  'norcalli/nvim-colorizer.lua',
   }
+
 })
 
 -- configure notify for telescope

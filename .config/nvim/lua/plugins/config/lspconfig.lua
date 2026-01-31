@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "sqlls", "ruff", "terraformls", "dockerls", "pyright", "ts_ls" },
+	ensure_installed = { "lua_ls", "sqlls", "ruff", "terraformls", "dockerls", "pyright", "ts_ls"},
 })
 
 -- require("lspconfig").setup()
