@@ -37,7 +37,8 @@ sudo pacman -Syy \
   bluez \
   bluez-utils \
   bluez-deprecated-tools \
-  bluetui
+  bluetui \
+  pacman-contrib
 
 ## Install yay
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -46,6 +47,7 @@ sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/ya
 yay -S opencode-bin
 yay -S ascii-image-converter-git
 yay -S rofi-greenclip
+yay -S python-pywal16 # Actively maintained pywal fork
 
 ## Install other packages
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
