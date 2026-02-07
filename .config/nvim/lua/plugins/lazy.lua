@@ -158,6 +158,7 @@ require("lazy").setup({
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
+    build = "make install_jsregexp"
 	},
 	"onsails/lspkind.nvim",
 	-- CODEIUM

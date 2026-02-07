@@ -1,0 +1,208 @@
+{
+  "dbt ref": {
+    "prefix": "ref",
+    "body": "{{ ref('${1:model_name}') }}$0",
+    "description": "Reference another dbt model"
+  },
+  "dbt source": {
+    "prefix": "source",
+    "body": "{{ source('${1:source_name}', '${2:table_name}') }}${3}",
+    "description": "Reference a dbt source table"
+  },
+  "dbt config": {
+    "prefix": "config",
+    "body": [
+      "{{",
+      "  config(",
+      "    materialized='${1|table,view,incremental,ephemeral|}',",
+      "    ${2:schema='${3:schema_name}'}",
+      "  )",
+      "}}"
+    ],
+    "description": "dbt model configuration block"
+  },
+  "dbt incremental config": {
+    "prefix": "configincr",
+    "body": [
+      "{{",
+      "  config(",
+      "    materialized='incremental',",
+      "    unique_key='${1:id}',",
+      "    incremental_strategy='${2|merge,delete+insert,append|}'",
+      "  )",
+      "}}"
+    ],
+    "description": "dbt incremental model configuration"
+  },
+  "dbt is_incremental": {
+    "prefix": "isincr",
+    "body": [
+      "{% if is_incremental() %}",
+      "  ${1:-- incremental logic here}",
+      "{% endif %}"
+    ],
+    "description": "dbt is_incremental() conditional block"
+  },
+  "dbt var": {
+    "prefix": "var",
+    "body": "{{ var('${1:variable_name}'${2:, '${3:default_value}'}) }}",
+    "description": "dbt project variable"
+  },
+  "dbt env_var": {
+    "prefix": "envvar",
+    "body": "{{ env_var('${1:ENV_VARIABLE}'${2:, '${3:default_value}'}) }}",
+    "description": "dbt environment variable"
+  },
+  "dbt this": {
+    "prefix": "this",
+    "body": "{{ this }}",
+    "description": "Reference to current model"
+  },
+  "dbt set variable": {
+    "prefix": "set",
+    "body": "{% set ${1:variable_name} = ${2:value} %}",
+    "description": "Set a Jinja variable"
+  },
+  "dbt for loop": {
+    "prefix": "for",
+    "body": [
+      "{% for ${1:item} in ${2:items} %}",
+      "  ${3:-- loop body}",
+      "{% endfor %}"
+    ],
+    "description": "Jinja for loop"
+  },
+  "dbt if statement": {
+    "prefix": "if",
+    "body": [
+      "{% if ${1:condition} %}",
+      "  ${2:-- if body}",
+      "{% endif %}"
+    ],
+    "description": "Jinja if statement"
+  },
+  "dbt if else": {
+    "prefix": "ifelse",
+    "body": [
+      "{% if ${1:condition} %}",
+      "  ${2:-- if body}",
+      "{% else %}",
+      "  ${3:-- else body}",
+      "{% endif %}"
+    ],
+    "description": "Jinja if-else statement"
+  },
+  "dbt macro call": {
+    "prefix": "macro",
+    "body": "{{ ${1:macro_name}(${2:args}) }}",
+    "description": "Call a dbt macro"
+  },
+  "dbt macro definition": {
+    "prefix": "macrodef",
+    "body": [
+      "{% macro ${1:macro_name}(${2:args}) %}",
+      "  ${3:-- macro body}",
+      "{% endmacro %}"
+    ],
+    "description": "Define a dbt macro"
+  },
+  "dbt test definition": {
+    "prefix": "testdef",
+    "body": [
+      "{% test ${1:test_name}(model, column_name) %}",
+      "",
+      "select",
+      "  {{ column_name }}",
+      "from {{ model }}",
+      "where ${2:-- test condition}",
+      "",
+      "{% endtest %}"
+    ],
+    "description": "Define a custom dbt test"
+  },
+  "dbt run_query": {
+    "prefix": "runquery",
+    "body": [
+      "{% set ${1:results} = run_query(${2:query}) %}",
+      "{% if execute %}",
+      "  ${3:-- process results}",
+      "{% endif %}"
+    ],
+    "description": "Execute a query at compile time"
+  },
+  "dbt log": {
+    "prefix": "log",
+    "body": "{{ log('${1:message}', info=True) }}",
+    "description": "Log a message during compilation"
+  },
+  "dbt target": {
+    "prefix": "target",
+    "body": "{{ target.${1|name,schema,type,database|} }}",
+    "description": "Access target properties"
+  },
+  "dbt generate surrogate key": {
+    "prefix": "surrogatekey",
+    "body": "{{ dbt_utils.generate_surrogate_key(['${1:column1}', '${2:column2}']) }}",
+    "description": "Generate surrogate key using dbt_utils"
+  },
+  "dbt star": {
+    "prefix": "star",
+    "body": "{{ dbt_utils.star(ref('${1:model_name}')${2:, except=['${3:column}']}) }}",
+    "description": "Select all columns using dbt_utils.star"
+  },
+  "dbt date spine": {
+    "prefix": "datespine",
+    "body": [
+      "{{ dbt_utils.date_spine(",
+      "    datepart='${1|day,week,month,year|}',",
+      "    start_date=\"cast('${2:2020-01-01}' as date)\",",
+      "    end_date=\"cast('${3:2025-01-01}' as date)\"",
+      ") }}"
+    ],
+    "description": "Generate date spine using dbt_utils"
+  },
+  "dbt pivot": {
+    "prefix": "pivot",
+    "body": [
+      "{{ dbt_utils.pivot(",
+      "    '${1:column}',",
+      "    ${2:values},",
+      "    agg='${3:sum}',",
+      "    then_value=${4:1},",
+      "    else_value=${5:0}",
+      ") }}"
+    ],
+    "description": "Pivot columns using dbt_utils"
+  },
+  "dbt CTE": {
+    "prefix": "cte",
+    "body": [
+      "${1:cte_name} as (",
+      "  select",
+      "    ${2:*}",
+      "  from ${3:table}",
+      ")${4:,}"
+    ],
+    "description": "Common Table Expression"
+  },
+  "dbt with CTE": {
+    "prefix": "withcte",
+    "body": [
+      "with",
+      "",
+      "${1:source} as (",
+      "  select * from {{ ${2|ref,source|}('${3:name}') }}",
+      "),",
+      "",
+      "${4:final} as (",
+      "  select",
+      "    ${5:*}",
+      "  from ${1:source}",
+      ")",
+      "",
+      "select * from ${4:final}"
+    ],
+    "description": "Full CTE structure for dbt model"
+  }
+}
+

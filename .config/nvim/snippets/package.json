@@ -2,9 +2,13 @@
   "name": "custom-snippets",
   "contributes": {
     "snippets": [
-      {
+{
         "language": "python",
         "path": "./python.json"
+      },
+      {
+        "language": "sql",
+        "path": "./sql.json"
       }
     ]
   }
