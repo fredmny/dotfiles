@@ -30,6 +30,16 @@ require("copilot").setup({
 	},
 })
 
+vim.keymap.set("n", "<leader>cT", function()
+  require("copilot.suggestion").toggle_auto_trigger()
+  local state = vim.b.copilot_suggestion_auto_trigger
+  if state then
+    vim.notify("Copilot autocompletion enabled", vim.log.levels.INFO)
+  else
+    vim.notify("Copilot autocompletion disabled", vim.log.levels.WARN)
+  end
+end, { desc = "Toggle Copilot autocompletion" })
+
 -- require("copilot_cmp").setup() -- Disabled: using native suggestions instead
 require("CopilotChat").setup({
 	model = "claude-sonnet-4.5",
