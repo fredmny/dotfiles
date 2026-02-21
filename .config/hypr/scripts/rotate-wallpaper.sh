@@ -26,5 +26,10 @@ fi
 
 # Regenerate pywal colors without touching wallpaper/tty/terminals
 if command -v wal >/dev/null 2>&1; then
-  wal -n -t -s -i "$WALLPAPER"
+  # Try backends in order; some handle low-color images better than others
+  for backend in wal colorz haishoku; do
+    if wal -n -t -s --backend "$backend" -i "$WALLPAPER" 2>/dev/null; then
+      break
+    fi
+  done
 fi
