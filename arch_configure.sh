@@ -65,6 +65,23 @@ gh extension install dlvhdr/gh-dash
 systemctl enable bluetooth.service
 systemctl start bluetooth.service
 
+# Docker
+read -p "Install Docker and related tools? [y/N] " install_docker
+if [[ "$install_docker" =~ ^[Yy]$ ]]; then
+  ## Install docker, buildx, compose, and lazydocker
+  sudo pacman -S docker docker-buildx docker-compose lazydocker
+
+  ## Create docker group and add current user
+  sudo groupadd -f docker
+  sudo usermod -aG docker "$USER"
+
+  ## Enable and start docker service
+  sudo systemctl enable docker.service
+  sudo systemctl start docker.service
+
+  echo "Docker installed and configured. Log out and back in for group changes to take effect."
+fi
+
 
 dotfiles_dir=$HOME/dotfiles
 #
