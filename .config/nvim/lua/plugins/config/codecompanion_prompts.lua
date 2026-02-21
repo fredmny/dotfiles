@@ -7,6 +7,10 @@ return {
 		description = "Open a chat with the current buffer content",
 		opts = {
 			alias = "chat_with_buffer",
+			modes = {
+        "n",
+        "v"
+      },
 			auto_submit = false, -- Automatically submit the prompt after filling in the code
 			stop_context_insertion = false, -- Stop inserting context when the prompt is submitted
 			user_prompt = false,
@@ -16,8 +20,9 @@ return {
 			{
 				role = "user",
 				content = function(context)
-					return "#{buffer}"
-            .. ""
+					return "#{buffer}\n"
+            .. "@{neovim}\n"
+            .. (context.code or "")
 				end,
 				opts = {
 					contains_code = true,
