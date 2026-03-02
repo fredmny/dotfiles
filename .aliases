@@ -46,6 +46,7 @@ alias nzp='fzp --bind "enter:become(nvim {})" --tmux center,90%,50%'
 alias sp='source .venv/bin/activate'
 alias k='sudo kubectl'
 alias ddev='dagster dev'
+alias mddev='make run-dagster-dev'
 alias ghd='gh dash'
 alias oc='opencode'
 
