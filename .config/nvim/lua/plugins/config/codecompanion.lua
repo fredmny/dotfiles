@@ -131,7 +131,7 @@ require("codecompanion").setup({
 		mcphub = {
 			callback = "mcphub.extensions.codecompanion",
 			opts = {
-				make_vars = true,
+				make_vars = false, -- TODO: re-enable after mcphub.nvim merges PR #279 (codecompanion v19 compat)
 				make_slash_commands = true,
 				show_result_in_chat = true,
 			},
