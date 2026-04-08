@@ -11,17 +11,17 @@ require("codecompanion").setup({
 		},
 	},
 	adapters = {
-    http = {
-      copilot = function()
-        return require("codecompanion.adapters").extend("copilot", {
-          schema = {
-            model = {
-              default = "claude-opus-4.5", -- Default model to use
-            },
-          },
-        })
-      end,
-    }
+		http = {
+			copilot = function()
+				return require("codecompanion.adapters").extend("copilot", {
+					schema = {
+						model = {
+							default = "claude-opus-4.6",
+						},
+					},
+				})
+			end,
+		},
 	},
 	memory = {
 		opts = {
@@ -151,9 +151,6 @@ vim.keymap.set({ "n", "v" }, "<leader>ct", ":CodeCompanionChat Toggle<CR>", { de
 vim.keymap.set({ "n", "v" }, "<leader>cz", ":CodeCompanionActions<CR>", { desc = "CodeCompanion Actions" })
 vim.keymap.set({ "n", "v" }, "<leader>ci", ":CodeCompanion<CR>", { desc = "CodeCompanion Inline" })
 vim.keymap.set("v", "<leader>ce", function()
-	require("codecompanion").prompt("cw")
-end, { noremap = true, silent = true, desc = "Use workflow to guide LLM" })
-vim.keymap.set("v", "<leader>ce", function()
 	require("codecompanion").prompt("explain")
 end, { noremap = true, silent = true, desc = "Explain" })
 vim.keymap.set("v", "<leader>cf", function()
@@ -170,7 +167,6 @@ vim.keymap.set("n", "<leader>cm", function()
 	require("codecompanion").prompt("commit")
 end, { noremap = true, silent = true, desc = "Write commit message" })
 vim.keymap.set("n", "<leader>cpr", function()
-vim.keymap.set({ "n", "v" }, "<leader>ci", ":CodeCompanionChat Toggle<CR>", { desc = "CodeCompanion chat toggle" })
 	require("codecompanion").prompt("review")
 end, { noremap = true, silent = true, desc = "Review Code" })
 vim.keymap.set("n", "<leader>cpp", function()

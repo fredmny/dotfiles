@@ -11,11 +11,11 @@ vim.diagnostic.config({
 })
 
 vim.lsp.config('ruff', {
+  capabilities = capabilities,
   init_options = {
     settings = {
       -- Server settings should go here
     },
-  capabilities = capabilities,
   }
 })
 vim.lsp.enable('ruff')

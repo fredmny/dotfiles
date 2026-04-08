@@ -15,25 +15,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = ";"
+-- mapleader and maplocalleader are set in core/settings.lua
+-- They must be set before lazy.nvim loads so that mappings are correct.
 
--- Get terminal output
-local function get_cmd_output(cmd)
-	local handle = io.popen(cmd)
-	local result = handle:read("*a")
-	handle:close()
-	return result
-end
-
--- Get Obsidian path
-local system_name = get_cmd_output("uname -s")
-system_name = system_name:gsub("%s+", "")
+-- Get Obsidian path (jit.os returns "OSX", "Linux", or "Windows")
 local obsidian_path = ""
-if system_name == "Linux" then
+if jit.os == "Linux" then
 	obsidian_path = vim.fn.expand("~") .. "/shared_drive/obsidian_personal/*.md"
 else
 	obsidian_path = vim.fn.expand("~") .. "/personal/obsidian_personal/*.md"
@@ -68,7 +55,6 @@ require("lazy").setup({
 	},
 	"nvim-lualine/lualine.nvim",
 	-- "ellisonleao/gruvbox.nvim",
-	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons",
 	-- Diffview
 	"sindrets/diffview.nvim",
@@ -89,7 +75,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		branch = "0.1.x",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	"nvim-telescope/telescope-ui-select.nvim",
@@ -105,7 +91,7 @@ require("lazy").setup({
 	"folke/twilight.nvim",
 	{
 		"nvim-treesitter/nvim-treesitter",
-		run = "TSUpdate",
+		build = ":TSUpdate",
 	},
 	"christoomey/vim-tmux-navigator",
 	"PedramNavid/dbtpal",
@@ -128,7 +114,7 @@ require("lazy").setup({
 	-- LSPsaga - has a lot of options to explore
 	{
 		"nvimdev/lspsaga.nvim",
-		after = "nvim-lspconfig",
+		dependencies = { "neovim/nvim-lspconfig" },
 	},
 	-- For which-key
 	{ "folke/which-key.nvim" },
@@ -233,7 +219,7 @@ require("lazy").setup({
     },
   },
   {
-  'norcalli/nvim-colorizer.lua',
+  'NvChad/nvim-colorizer.lua',
   }
 
 })

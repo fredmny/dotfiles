@@ -29,7 +29,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Buffer local mappings.
 		-- See `:help vim.lsp.*` for documentation on any of the below functions
-		local opts = { buffer = ev.buf }
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "Go to declaration" })
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "Go to definition" })
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = ev.buf, desc = "Show hover documentation" })

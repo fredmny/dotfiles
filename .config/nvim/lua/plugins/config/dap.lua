@@ -54,7 +54,8 @@ dap.configurations.javascript = dap.configurations.typescript
 -- To setup more debuggers refer to
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 
-require("dap.ext.vscode").load_launchjs(nil, {})
+-- .vscode/launch.json files are now read automatically on-demand by nvim-dap.
+-- See :help dap-providers
 
 -- DAP (debugger) keymaps
 vim.keymap.set("n", "<Leader>db", function()

@@ -24,7 +24,6 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.wrap = true
 vim.opt.textwidth = 300
-vim.o.autoread = true
 
 -- Makes neovim and host OS clipboard play nicely with each other
 vim.o.clipboard = "unnamedplus"
@@ -48,4 +47,7 @@ vim.o.swapfile = false
 --vim.opt.mouse = "a"
 
 vim.o.termguicolors = true
-vim.cmd([[ set noswapfile ]])
+
+-- Neovim 0.12: native popup menu border and global floating window border
+vim.o.pumborder = "rounded"
+vim.o.winborder = "rounded"
