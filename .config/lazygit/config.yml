@@ -1,5 +1,4 @@
 # For MacOS link ~/Library/Application\ Support/lazygit/config.yml to this file
----
 gui:
   branchColorPatterns:
     'fix': '#e06666'
@@ -7,3 +6,9 @@ gui:
     'chore': '#e69138'
     'develop': '#b196ff'
     'main': '#48a8ff'
+customCommands:
+  - key: '<c-g>'
+    description: 'Run wt step commit'
+    command: 'wt step commit'
+    context: 'localBranches'
+    output: terminal
