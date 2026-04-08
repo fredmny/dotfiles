@@ -38,7 +38,7 @@ create_base_repo_session() {
   window_nr=9
   tmux new-window -t "$session:$window_nr" -n 'oc' -c "$repo_dir"
   tmux send-keys -t "$session:$window_nr" 'source .venv/bin/activate' C-m
-  tmux send-keys -t "$session:$window_nr" 'opencode' C-m
+  # tmux send-keys -t "$session:$window_nr" 'opencode' C-m
 
   echo "Session '$session' created successfully"
 }
@@ -85,22 +85,22 @@ create_deployments_session() {
   echo "Session '$session' created successfully"
 }
 
-create_opencode_session() {
-  local session="opencode"
-
-  tmux has-session -t "$session" &> /dev/null
-  if [ $? -eq 0 ]; then
-    echo "Session '$session' already exists"
-    return 0
-  fi
-
-  tmux new-session -s "$session" -n 'opencode' -d
-  tmux send-keys -t "$session:0" 'opencode' C-m
-
-  tmux new-window -t "$session:1" -n 'sh'
-
-  echo "Session '$session' created successfully"
-}
+# create_opencode_session() {
+#   local session="opencode"
+#
+#   tmux has-session -t "$session" &> /dev/null
+#   if [ $? -eq 0 ]; then
+#     echo "Session '$session' already exists"
+#     return 0
+#   fi
+#
+#   tmux new-session -s "$session" -n 'opencode' -d
+#   tmux send-keys -t "$session:0" 'opencode' C-m
+#
+#   tmux new-window -t "$session:1" -n 'sh'
+#
+#   echo "Session '$session' created successfully"
+# }
 
 echo "Creating base repository sessions..."
 create_base_repo_session "bifrost" "$BRM_REPOS_DIR/bifrost"
@@ -116,9 +116,9 @@ echo ""
 echo "Creating deployments session..."
 create_deployments_session
 
-echo ""
-echo "Creating opencode session..."
-create_opencode_session
+# echo ""
+# echo "Creating opencode session..."
+# create_opencode_session
 
 echo ""
 echo "All sessions created!"
