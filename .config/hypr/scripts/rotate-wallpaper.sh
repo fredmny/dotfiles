@@ -17,6 +17,12 @@ splash=true
 ipc=true
 EOF
 
+# Wait for hyprpaper IPC to be ready
+for i in $(seq 1 20); do
+  hyprctl hyprpaper listloaded >/dev/null 2>&1 && break
+  sleep 0.5
+done
+
 # Apply wallpaper with hyprpaper if running
 if pgrep -x hyprpaper >/dev/null; then
   hyprctl hyprpaper unload all
