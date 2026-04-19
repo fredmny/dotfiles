@@ -6,6 +6,10 @@ gui:
     'chore': '#e69138'
     'develop': '#b196ff'
     'main': '#48a8ff'
+os:
+  edit: 'nvim {{filename}}'
+  editAtLine: 'nvim +{{line}} {{filename}}'
+  open: 'nvim {{filename}}'
 customCommands:
   - key: '<c-g>'
     description: 'Run wt step commit'
