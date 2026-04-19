@@ -62,8 +62,8 @@ gh extension install dlvhdr/gh-dash
 # systemctl start displayink.service
 
 # Enable bluetooth
-systemctl enable bluetooth.service
-systemctl start bluetooth.service
+# systemctl enable bluetooth.service
+# systemctl start bluetooth.service
 
 # Docker
 read -p "Install Docker and related tools? [y/N] " install_docker
