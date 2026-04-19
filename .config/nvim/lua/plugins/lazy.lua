@@ -240,7 +240,8 @@ require("lazy").setup({
   },
   {
   'NvChad/nvim-colorizer.lua',
-  }
+  },
+  "mbbill/undotree"
 
 })
 
