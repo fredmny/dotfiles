@@ -7,13 +7,21 @@
     "figma desktop remote": {
       "type": "remote",
       "url": "http://127.0.0.1:3845/mcp",
-      "enabled": false,
+      "enabled": false
     },
     "excalidraw": {
       "type": "remote",
       "url": "https://mcp.excalidraw.com",
       "oauth": {},
-      "enabled": false,
+      "enabled": false
+    }
+  },
+  "permission": {
+    "read": {
+      "~/.config/opencode/get-shit-done/*": "allow"
+    },
+    "external_directory": {
+      "~/.config/opencode/get-shit-done/*": "allow"
     }
   }
 }
