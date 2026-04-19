@@ -1,28 +1,3 @@
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"bash",
-		"dockerfile",
-		"json",
-		"lua",
-		"markdown",
-		"markdown_inline",
-		"python",
-		"sql",
-		"terraform",
-		"typescript",
-		"javascript",
-		"vim",
-		"vimdoc",
-		"yaml",
-	},
-
-	-- Install parsers synchronously (only applied to `ensure_installed`)
-	sync_install = false,
-	auto_install = true,
-	highlight = {
-		enable = true,
-	},
-	indent = {
-		enable = true,
-	},
-})
+-- nvim-treesitter (main branch) no longer uses require("nvim-treesitter.configs").setup()
+-- Configuration is now handled via opts in the lazy.nvim plugin spec (lua/plugins/lazy.lua)
+-- Highlight and indent are built into Neovim 0.12+ and enabled automatically

@@ -78,7 +78,7 @@ cmp.setup({
 -- For luasnip keymaps
 local ls = require("luasnip")
 
-vim.keymap.set({ "i" }, "<C-K>", function()
+vim.keymap.set({ "i" }, "<C-S>", function()
 	ls.expand()
 end, { silent = true, desc = "Expand snippet" })
 vim.keymap.set({ "i", "s" }, "<C-L>", function()
