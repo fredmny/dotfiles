@@ -7,7 +7,7 @@ fi
 
 # Obsidian vault path
 if [[ "$(uname)" == "Darwin" ]]; then
-    export OBSIDIAN_VAULT="$HOME/CHANGEME" # TODO: set macOS vault path
+    export OBSIDIAN_VAULT="$HOME/personal/obsidian_personal"
 else
     export OBSIDIAN_VAULT="$HOME/obsidian_personal"
 fi
