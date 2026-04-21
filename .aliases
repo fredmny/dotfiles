@@ -49,6 +49,11 @@ alias ddev='dagster dev'
 alias mddev='make run-dagster-dev'
 alias ghd='gh dash'
 alias oc='opencode'
+## Worktrunk
+alias wtsc='wt switch -c'
+alias wts='wt switch'
+alias wtr='wt remove'
+
 
 #hyprland
 alias h='hyprctl --instance 0' # Reasone for `--instance 0`: https://github.com/hyprwm/Hyprland/issues/3134
