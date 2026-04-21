@@ -4,6 +4,13 @@ These are the configuration files for my Arch Linux installation
 
 ## Screenshot
 
+> [!NOTE]
+> I'm currently using Hyprland and will add more screenshots another time
+
+### Qtile
+
+This was my previous configuration
+
 ![Screenshot 01](./.screenshots/screenshot_01.png)
 ![Screenshot 02](./.screenshots/screenshot_02.png)
 ![Screenshot 03](./.screenshots/screenshot_03.png)
