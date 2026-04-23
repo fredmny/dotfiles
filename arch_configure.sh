@@ -48,6 +48,7 @@ yay -S opencode-bin
 yay -S ascii-image-converter-git
 yay -S rofi-greenclip
 yay -S python-pywal16 # Actively maintained pywal fork
+yay -S sesh-bin
 
 ## Install other packages
 curl -fsSL https://pkgs.netbird.io/install.sh | sh

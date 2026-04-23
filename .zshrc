@@ -155,6 +155,7 @@ compinit
 
 export PATH="/home/prophet/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Enabling fzf
 source /usr/share/fzf/key-bindings.zsh
