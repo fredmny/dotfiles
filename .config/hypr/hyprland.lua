@@ -192,6 +192,7 @@ end
 --------------------
 
 hl.on("hyprland.start", function()
+    hl.exec_cmd("mako")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/rotate-wallpaper.sh")
     hl.exec_cmd("waybar & hypridle")
