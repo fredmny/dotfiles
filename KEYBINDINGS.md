@@ -35,7 +35,7 @@
 | `SUPER + R` | Open app launcher (rofi drun) |
 | `SUPER + Space` | Open app launcher (rofi drun) |
 | `SUPER + P` | Pseudo-tile (dwindle) |
-| `SUPER + TAB` | Toggle split (dwindle) |
+| `SUPER + TAB` | Toggle split (dwindle, via layoutmsg togglesplit) |
 | `SUPER + CTRL + Q` | Lock screen (hyprlock) |
 | `SUPER + I` | Toggle keyboard layout variant |
 | `SUPER + S` | Toggle special workspace (scratchpad) |
