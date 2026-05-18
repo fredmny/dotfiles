@@ -1,22 +1,40 @@
 // OpenCode plugin: Rename tmux window based on session status
-// - Shows a spinner icon when OpenCode is working
-// - Restores the original window name when idle
+// - Prepends a status emoji when OpenCode is working or idle
+// - Preserves the original window name
+async function getTmuxWindowName($): Promise<string> {
+  try {
+    const result = await $`tmux display-message -p ${'#W'}`.quiet()
+    return result.text().trim().replace(/^[⏳✅] /, "")
+  } catch {
+    return ""
+  }
+}
+
 async function setTmuxWindowName($, name) {
   try {
-    await $`tmux rename-window ${name}`
+    await $`tmux rename-window ${name}`.quiet()
   } catch {
     // not in tmux, ignore
   }
 }
+
 export const TmuxStatusPlugin = async ({ $ }) => {
-  // Save the original window name on init
+  let originalName = ""
+
   return {
     event: async ({ event }) => {
       if (event.type === "session.status") {
-        await setTmuxWindowName($, " ⏳ oc")
+        if (!originalName) {
+          originalName = await getTmuxWindowName($)
+        }
+        await setTmuxWindowName($, `⏳ ${originalName}`)
       }
       if (event.type === "session.idle") {
-        await setTmuxWindowName($, " ✅ oc")
+        if (!originalName) {
+          originalName = await getTmuxWindowName($)
+        }
+        await setTmuxWindowName($, `✅ ${originalName}`)
+        originalName = ""
       }
     },
   }
