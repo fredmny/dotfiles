@@ -16,7 +16,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/prophet/.config/oh-my-zsh
+  export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -158,8 +158,8 @@ export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/go/bin"
 
 # Enabling fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
 
 # Enabling zoxide
 eval "$(zoxide init zsh --cmd z)" 
@@ -173,4 +173,12 @@ if [ -f '/home/prophet/packages/google-cloud-sdk/path.zsh.inc' ]; then . '/home/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/prophet/packages/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/prophet/packages/google-cloud-sdk/completion.zsh.inc'; fi
 
-. /usr/share/nvm/init-nvm.sh
+# . /usr/share/nvm/init-nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
+. "$HOME/.local/bin/env"
