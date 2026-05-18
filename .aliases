@@ -53,6 +53,7 @@ alias oc='opencode'
 alias wtsc='wt switch -c'
 alias wts='wt switch'
 alias wtr='wt remove'
+alias git-auth='eval $(ssh-agent -s) && ssh-add ~/.ssh/github'
 
 
 #hyprland
