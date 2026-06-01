@@ -10,6 +10,7 @@ vim.keymap.set("n", "<leader>j", ":bn<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>k", ":bp<cr>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+vim.keymap.set("n", "zl", "zzLzz<C-o>", { desc = "Center, peek bottom of view, jump back" })
 vim.keymap.set("n", "<leader>bo", ":1, $-1 bd <cr>", { desc = "Delete all buffers except current" })
 vim.keymap.set("n", "<leader>-", ":Twilight <cr>", { desc = "Toggle Twilight" })
 -- GitSigns

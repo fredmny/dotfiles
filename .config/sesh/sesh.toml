@@ -1,5 +1,11 @@
 #:schema https://github.com/joshmedeski/sesh/raw/main/sesh.schema.json
 
+blacklist = ["^scratch$"]
+
+[[session]]
+name = "scratch"
+path = "~"
+
 [[session]]
 name = "config"
 path = "~/personal/dotfiles/.config"

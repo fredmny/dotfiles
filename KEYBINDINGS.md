@@ -129,7 +129,7 @@
 | `prefix + "` | Horizontal split in current directory |
 | `prefix + %` | Vertical split in current directory |
 | `prefix + g` | Popup: GitHub Dashboard (gh dash) |
-| `prefix + t` | Popup: zsh shell |
+| `prefix + t` | Open scratch popup (or close it when inside scratch) |
 | `prefix + n` | Popup: Obsidian inbox note in `$EDITOR` |
 | `prefix + d` | Popup: Lazydocker |
 | `prefix + f` | Popup: Ranger file manager |
@@ -173,6 +173,7 @@
 | `<leader>k` | n | Previous buffer |
 | `<C-d>` | n | Scroll down and center |
 | `<C-u>` | n | Scroll up and center |
+| `zl` | n | Center, peek bottom of view (`zz` → `L` → `zz` → `<C-o>` jump back) |
 | `<leader>bo` | n | Delete all buffers except current |
 | `<leader>-` | n | Toggle Twilight |
 | `<leader>bt` | n | Open current buffer in new tab |
