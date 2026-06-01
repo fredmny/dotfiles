@@ -6,6 +6,7 @@
 --------------------
 
 require("monitors")
+require("workspace-rules")
 
 ---------------------------
 --- API COMPATIBILITY ---
@@ -272,6 +273,8 @@ hl.animation({ name = "workspaces",    enabled = true, speed = 1.94, curve = "al
 hl.animation({ name = "workspacesIn",  enabled = true, speed = 1.21, curve = "almostLinear", style = "fade" })
 hl.animation({ name = "workspacesOut", enabled = true, speed = 1.94, curve = "almostLinear", style = "fade" })
 hl.animation({ name = "zoomFactor",    enabled = true, speed = 7,    curve = "quick" })
+
+-- Workspace rules are kept in sync with the active monitor layout.
 
 -- Layouts
 hl.dwindle.preserve_split = true
