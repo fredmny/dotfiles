@@ -1,0 +1,12 @@
+{
+  "_comment": "Advisor Mode Extension — edit and /reload to apply changes at runtime.",
+  "advisorModel": "github-copilot/claude-opus-4.7",
+  "advisorThinking": "high",
+  "triggerPrefix": ">>",
+  "autoRoutePatterns": [],
+  "confirmBeforeCall": false,
+  "advisorSystemPrompt": "You are a senior technical advisor. Provide thorough, well-reasoned analysis. Be precise, actionable, and focus on correctness over brevity.",
+  "contextStrategy": "relevant",
+  "showUsageStats": true,
+  "sessionBudget": null
+}
