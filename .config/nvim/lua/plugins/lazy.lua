@@ -192,6 +192,21 @@ require("lazy").setup({
 		},
 		build = "make tiktoken", -- Only on MacOS or Linux
 	},
+  -- Claude Code
+  -- # Option 1
+  -- {
+  --   "greggh/claude-code.nvim",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim", -- Required for git operations
+  --   },
+  -- },
+  -- # Option 2
+  {
+    "coder/claudecode.nvim",
+    dependencies = {
+      "folke/snacks.nvim"
+    },
+  },
 	-- CodeCompanion
 	{
 		"olimorris/codecompanion.nvim",
@@ -202,13 +217,13 @@ require("lazy").setup({
 		},
 	},
 	-- MCP Hub
-	{
-		"ravitemer/mcphub.nvim",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-		},
-		build = "npm install -g mcp-hub@latest", -- Install mcp-hub globally
-	},
+	-- {
+	-- 	"ravitemer/mcphub.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 	},
+	-- 	build = "npm install -g mcp-hub@latest", -- Install mcp-hub globally
+	-- },
 	-- Obsidian
 	{
 		"epwalsh/obsidian.nvim",
