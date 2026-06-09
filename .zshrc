@@ -74,15 +74,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
-  vscode 
-  poetry 
-  colored-man-pages 
-  zsh-autosuggestions 
-  zsh-syntax-highlighting 
+  git
+  poetry
+  colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
   copyfile # copy contents of file
   copybuffer # copy what's typed in the command line with Ctrl+O
   zsh-vi-mode
+  uv
+  zoxide
 )
 bindkey '^ ' autosuggest-accept
 
@@ -107,7 +108,11 @@ export EDITOR='nvim'
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+if ! ssh-add -l &>/dev/null 2>&1; then
+    ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null 2>&1
+    ssh-add ~/.ssh/github 2>/dev/null
+fi
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -162,7 +167,7 @@ export PATH="$PATH:$HOME/go/bin"
 # source /usr/share/fzf/completion.zsh
 
 # Enabling zoxide
-eval "$(zoxide init zsh --cmd z)" 
+eval "$(zoxide init zsh --cmd z)"
 
 # Show colorful script
 # colorscript --random
