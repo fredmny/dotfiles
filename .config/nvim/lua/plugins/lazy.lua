@@ -175,6 +175,11 @@ require("lazy").setup({
 			"hrsh7th/nvim-cmp",
 		},
 	},
+  -- llm.nvim
+  -- {
+  --   'huggingface/llm.nvim',
+  --   event = "InsertEnter",
+  -- },
 	-- GitHub Copilot
 	{
 		"zbirenbaum/copilot.lua",

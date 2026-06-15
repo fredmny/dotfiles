@@ -1,2 +1,3 @@
 .config/nvim/plugin/
+.config/secrets
 *.DS_Store
