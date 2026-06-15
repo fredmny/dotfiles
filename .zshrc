@@ -12,6 +12,9 @@ else
     export OBSIDIAN_VAULT="$HOME/obsidian_personal"
 fi
 
+# Load secrets (API keys, tokens) — not committed to dotfiles
+. "$HOME/.config/secrets" 2>/dev/null || true
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -186,4 +189,4 @@ export NVM_DIR="$HOME/.nvm"
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
-. "$HOME/.local/bin/env"
+# . "$HOME/.local/bin/env"
