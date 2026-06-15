@@ -132,3 +132,11 @@ dbtdocs () {
   fi
   rm temp_file
 }
+
+ct () {
+  local query="$*"
+  local os="$(uname -s)"
+  local cmd
+  cmd="$(claude -p "You are a terminal command translator. The user is on $os. Reply with ONLY the shell command that accomplishes the following — no explanation, no markdown, no backticks, just the raw command: $query")"
+  [[ -n "$cmd" ]] && print -z -- "$cmd"
+}
