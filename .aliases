@@ -140,3 +140,8 @@ ct () {
   cmd="$(claude -p "You are a terminal command translator. The user is on $os. Reply with ONLY the shell command that accomplishes the following — no explanation, no markdown, no backticks, just the raw command: $query")"
   [[ -n "$cmd" ]] && print -z -- "$cmd"
 }
+
+tl () {
+  local text="$*"
+  claude -p "You are a translator. Translate the following text to Brazilian Portuguese. If the text itself specifies a different target language, translate to that language instead. If you're asked to translate only a single word, list the different possible translations. Reply with ONLY the translated text — no explanation, no notes, no quotation marks: $text"
+}
