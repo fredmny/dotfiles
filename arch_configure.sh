@@ -5,6 +5,7 @@ sudo pacman -Sy archlinux-keyring
 sudo pacman -Syyu
 
 sudo pacman -Syy \
+  ibus \
   gnome-keyring \
   jq \
 	npm \

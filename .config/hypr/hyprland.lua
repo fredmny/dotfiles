@@ -193,6 +193,7 @@ end
 --------------------
 
 hl.on("hyprland.start", function()
+    hl.exec_cmd("ibus-daemon -drx && gsettings set org.freedesktop.ibus.general preload-engines \"['xkb:us:intl:eng']\"")
     hl.exec_cmd("mako")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/rotate-wallpaper.sh")
@@ -216,6 +217,9 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XKB_DEFAULT_LAYOUT", "us")
 hl.env("XKB_DEFAULT_VARIANT", "intl")
 hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
+hl.env("GTK_IM_MODULE", "ibus")
+hl.env("QT_IM_MODULE", "ibus")
+hl.env("XMODIFIERS", "@im=ibus")
 
 -----------------------
 --- LOOK AND FEEL ---

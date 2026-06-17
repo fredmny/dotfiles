@@ -75,6 +75,17 @@ To change the wallpaper you can use the `wal -i {file}` command within the termi
 
 The wallpapers for the screenshots are in the wallpaper folder. I got them from a collection from [Luke Smith](https://lukesmith.xyz/), that I downloaded some years ago.
 
+## Input Method
+
+- **IBus** is used as the input method framework (required for dead keys on Wayland apps like Ghostty).
+- **Autostart:** `ibus-daemon -drx` in Hyprland config (no env vars needed — `QT_IM_MODULE` and `GTK_IM_MODULE` must be **unset** on Wayland).
+- **Cedilla fix:** `~/.XCompose` remaps `'` + `c` → `ç` instead of `ć`:
+  ```
+  include "%L"
+  <dead_acute> <c> : "ç" ccedilla
+  <dead_acute> <C> : "Ç" Ccedilla
+  ```
+
 ## How I manage my Dotfiles Repository
 
 I do it with a bare git repository and would engourage you to do the same. Just check following links (I recommend watching the video from Derek Taylor/DistroTube for better understanding):
