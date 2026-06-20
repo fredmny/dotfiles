@@ -16,13 +16,25 @@ windows = ["sh", "gh", "oc"]
 name = "datalake-pipelines"
 path = "~/brm_repos/dp/datalake-pipelines"
 startup_command = "tmux rename-window nvim && nvim"
-windows = ["sh", "gh", "oc"]
+windows = ["sh", "gh", "claude"]
 
 [[session]]
 name = "brm-data-platform"
 path = "~/brm_repos/brm-data-platform"
 startup_command = "tmux rename-window nvim && nvim"
-windows = ["sh", "gh", "oc"]
+windows = ["sh", "gh", "claude"]
+
+[[session]]
+name = "obsidian"
+path = "~/obsidian_personal"
+startup_command = "tmux rename-window nvim && nvim"
+windows = ["sh"]
+
+[[session]]
+name = "bootdev"
+path = "~/courses/bootdev-blog-aggregator"
+startup_command = "tmux rename-window nvim && nvim"
+windows = ["sh", "oc"]
 
 [[window]]
 name = "sh"
@@ -35,3 +47,7 @@ startup_script = "gh dash"
 [[window]]
 name = "oc"
 startup_script = "tmux move-window -s :oc -t 9 && opencode"
+
+[[window]]
+name = "claude"
+startup_script = "tmux move-window -s :oc -t 9 && claude"
