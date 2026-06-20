@@ -17,16 +17,16 @@ splash=true
 ipc=true
 EOF
 
-# Wait for hyprpaper process to start
-for i in $(seq 1 10); do
-  pgrep -x hyprpaper >/dev/null && break
-  sleep 0.3
+# Wait for hyprpaper IPC to be ready
+for i in $(seq 1 20); do
+  hyprctl hyprpaper listloaded >/dev/null 2>&1 && break
+  sleep 0.5
 done
 
 # Apply wallpaper with hyprpaper if running
-# Note: unload all and preload aren't used here because they fail
-# when routed through the Hyprland socket (wallpaper loads on the fly)
 if pgrep -x hyprpaper >/dev/null; then
+  hyprctl hyprpaper unload all
+  hyprctl hyprpaper preload "$WALLPAPER"
   hyprctl hyprpaper wallpaper ",$WALLPAPER"
 fi
 
@@ -41,26 +41,30 @@ if command -v wal >/dev/null 2>&1; then
 fi
 
 # Update Hyprland active border with the new wallpaper colors
-# pywal writes rgba(R,G,B,A) but hyprctl keyword expects rgba(rrggbbaa)
 COLORS_FILE="$HOME/.cache/wal/colors-hyprland.conf"
 if [ -f "$COLORS_FILE" ]; then
   COLOR3=$(grep '^\$color3' "$COLORS_FILE" | sed 's/^\$color3\s*=\s*//')
   COLOR6=$(grep '^\$color6' "$COLORS_FILE" | sed 's/^\$color6\s*=\s*//')
   if [ -n "$COLOR3" ] && [ -n "$COLOR6" ]; then
-    COLOR3=$(python3 -c "
+    eval "$(python3 - "$COLOR3" "$COLOR6" << 'PYEOF'
 import sys, re
-m = re.match(r'rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)', sys.argv[1])
-if m:
-    r, g, b, a = int(m[1]), int(m[2]), int(m[3]), float(m[4])
-    print(f'rgba({r:02x}{g:02x}{b:02x}{int(a*255):02x})')
-" "$COLOR3")
-    COLOR6=$(python3 -c "
-import sys, re
-m = re.match(r'rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)', sys.argv[1])
-if m:
-    r, g, b, a = int(m[1]), int(m[2]), int(m[3]), float(m[4])
-    print(f'rgba({r:02x}{g:02x}{b:02x}{int(a*255):02x})')
-" "$COLOR6")
-    hyprctl eval "hl.general['col.active_border'] = '$COLOR3 $COLOR6 45deg' "
+
+def convert(rgba_str):
+    m = re.match(r'rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)', rgba_str)
+    if m:
+        r, g, b, a = int(m[1]), int(m[2]), int(m[3]), float(m[4])
+        return f'rgba({r:02x}{g:02x}{b:02x}{int(a*255):02x})'
+    return ''
+
+print(f"C3='{convert(sys.argv[1])}'")
+print(f"C6='{convert(sys.argv[2])}'")
+PYEOF
+)"
+    hyprctl eval "hl.general['col.active_border'] = '$C3 $C6 45deg' "
   fi
 fi
+
+# Sync RGB fans/mouse LEDs with the new wallpaper palette
+"$HOME/.config/hypr/scripts/openrgb-wal.sh" &
+
+
