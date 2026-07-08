@@ -26,7 +26,7 @@
       "urgent": "󱨇",
       "default": ""
     },
-    "on-click": "activate",
+    "on-click": "hyprctl dispatch workspace {id}",
     "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
     "all-outputs": true

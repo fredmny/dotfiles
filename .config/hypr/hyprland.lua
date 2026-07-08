@@ -328,6 +328,7 @@ hl.bind(mainMod .. " + space",        hl.dsp.exec(menu))
 hl.bind(mainMod .. " + P",            hl.dsp.pseudo())
 hl.bind(mainMod .. " + TAB",          hl.dsp.layoutmsg("togglesplit"))
 hl.bind("SUPER + CTRL + Q",           hl.dsp.exec(lockScreenManager))
+hl.bind("Print",                      hl.dsp.exec("grimblast copysave area"))
 
 -- Rofi submap
 local function exec_from_rofi_submap(cmd)
@@ -345,6 +346,7 @@ hl.submap("rofi_submenu", function()
     hl.bind("P", exec_from_rofi_submap("~/.config/rofi/scripts/rofi-power.sh"))
     hl.bind("M", exec_from_rofi_submap("~/.config/rofi/scripts/rofi-hypr-move-workspace.sh"))
     hl.bind("L", exec_from_rofi_submap("~/.config/rofi/scripts/rofi-hypr-screen-layout.sh"))
+    hl.bind("G", exec_from_rofi_submap("~/.config/rofi/scripts/rofi-screenshot.sh"))
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
