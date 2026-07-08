@@ -1,0 +1,26 @@
+{
+  "model": "claude-fable-5[1m]",
+  "enabledPlugins": {
+    "liquid-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "ai-tools": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Branching-Minds/ai-tools.git"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "advisorModel": "opus",
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark",
+  "skipAutoPermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 2
+  }
+}
