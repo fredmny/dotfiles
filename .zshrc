@@ -87,6 +87,7 @@ plugins=(
   zsh-vi-mode
   uv
   zoxide
+  fzf
 )
 bindkey '^ ' autosuggest-accept
 
@@ -164,10 +165,8 @@ compinit
 export PATH="/home/prophet/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
-# Enabling fzf
-# source /usr/share/fzf/key-bindings.zsh
-# source /usr/share/fzf/completion.zsh
 
 # Enabling zoxide
 eval "$(zoxide init zsh --cmd z)"
