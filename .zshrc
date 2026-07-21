@@ -180,12 +180,6 @@ if [ -f '/home/prophet/packages/google-cloud-sdk/path.zsh.inc' ]; then . '/home/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/prophet/packages/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/prophet/packages/google-cloud-sdk/completion.zsh.inc'; fi
 
-# . /usr/share/nvm/init-nvm.sh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 # . "$HOME/.local/bin/env"
