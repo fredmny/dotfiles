@@ -88,6 +88,7 @@ plugins=(
   uv
   zoxide
   fzf
+  mise
 )
 bindkey '^ ' autosuggest-accept
 
@@ -112,11 +113,9 @@ export EDITOR='nvim'
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
-if ! ssh-add -l &>/dev/null 2>&1; then
-    ssh-agent -a "$SSH_AUTH_SOCK" >/dev/null 2>&1
-    ssh-add ~/.ssh/github 2>/dev/null
-fi
+# The agent is managed by the session, not by zsh: launchd on macOS,
+# Hyprland's exec-once on Linux (see .config/hypr/hyprland.lua).
+# Key loading is handled by ~/.ssh/config (AddKeysToAgent / UseKeychain).
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -183,3 +182,4 @@ if [ -f '/home/prophet/packages/google-cloud-sdk/completion.zsh.inc' ]; then . '
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 # . "$HOME/.local/bin/env"
+eval "$(mise activate zsh)"

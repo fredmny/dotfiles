@@ -19,7 +19,6 @@ if [ $session_exists -ne 0 ]; then
 
   # Window 0
   tmux new-session -s "$session" -n 'nvim' -d
-  tmux send-keys -t "$session:$window_nr" 'ssh-add ~/.ssh/github' C-m
   tmux send-keys -t "$session:$window_nr" 'nvim' C-m
 
   # Window 1

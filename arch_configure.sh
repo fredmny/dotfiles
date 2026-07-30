@@ -109,6 +109,9 @@ ln -s ${dotfiles_dir}/.aliases $HOME/.aliases
 ln -s ${dotfiles_dir}/.tmux.conf $HOME/.tmux.conf
 ln -s ${dotfiles_dir}/.zshrc $HOME/.zshrc
 
+mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh
+ln -s ${dotfiles_dir}/.ssh/config $HOME/.ssh/config
+
 
 # Change file permissions
 

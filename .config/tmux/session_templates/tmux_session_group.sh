@@ -23,7 +23,6 @@ create_base_repo_session() {
   window_nr=0
 
   tmux new-session -s "$session" -n 'nvim' -d -c "$repo_dir"
-  tmux send-keys -t "$session:$window_nr" 'ssh-add ~/.ssh/github' C-m
   tmux send-keys -t "$session:$window_nr" 'source .venv/bin/activate' C-m
   tmux send-keys -t "$session:$window_nr" 'nvim' C-m
 

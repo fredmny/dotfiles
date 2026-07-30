@@ -10,7 +10,6 @@ if [ $? != 0 ]; then
   
   # Window 0
   tmux new-session -s $session -n 'nvim' -d
-  tmux send-keys -t $session:0 'ssh-add ~/.ssh/github' C-m
   tmux send-keys -t $session:0 'cd ~/personal/dotfiles/.config/nvim && nvim' C-m
   
   # Window 1  
