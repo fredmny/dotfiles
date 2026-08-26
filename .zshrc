@@ -183,3 +183,21 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 
 # . "$HOME/.local/bin/env"
 eval "$(mise activate zsh)"
+
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
+
+# zsh-vi-mode re-initializes keymaps at the first prompt, which wipes any
+# bindings made during .zshrc. So whoever wants ^R has to bind it from zvm's
+# post-init hook instead: atuin if it's installed, otherwise fzf.
+if command -v atuin >/dev/null 2>&1; then
+  _hist_search_init='eval "$(atuin init zsh)"; bindkey -M vicmd "^R" atuin-search-vicmd'
+else
+  _hist_search_init='(( $+widgets[fzf-history-widget] )) && bindkey -M viins "^R" fzf-history-widget && bindkey -M vicmd "^R" fzf-history-widget'
+fi
+
+if [[ -n "$ZVM_VERSION" && "$ZVM_INIT_MODE" != sourcing ]]; then
+  zvm_after_init_commands+=("$_hist_search_init")
+else
+  eval "$_hist_search_init"
+fi
+unset _hist_search_init
