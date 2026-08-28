@@ -65,6 +65,18 @@ alias hmond='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked'
 alias hmond2='/home/prophet/.config/hypr/scripts/monitor-switch.sh docked2'
 alias hmonm='/home/prophet/.config/hypr/scripts/monitor-switch.sh mobile'
 
+# kdeconnect
+kcd () {
+    local mount_dir="/run/user/$(id -u)"
+    local target
+    target="$(ls -1 "$mount_dir" 2>/dev/null | grep -E '^[0-9a-f]{32}$' | head -1)"
+    if [[ -z "$target" ]]; then
+        echo "No KDE Connect device mounted under $mount_dir"
+        return 1
+    fi
+    cd "$mount_dir/$target"
+}
+
 ## functions
 mcd () {
     mkdir -p $1

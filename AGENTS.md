@@ -74,3 +74,35 @@ the corresponding section in `KEYBINDINGS.md` before finishing:**
 
 **Update strategy:** surgical edit — only change the rows or sections directly
 affected. Do not regenerate the entire file.
+
+## KDE Connect (Hyprland)
+
+`arch_configure.sh` installs `kdeconnect`, `sshfs`, `hypr-kdeconnect-fix-git`
+(AUR), and opens UFW ports `1714:1764` UDP/TCP. This gets devices paired and
+file browsing working, but **incoming file transfers require an extra manual
+step** that the script does not automate.
+
+### Why manual config is needed
+
+By default, KDE Connect shows a notification with Accept/Decline buttons when
+a file is incoming. On Plasma this works natively, but on Hyprland the action
+callbacks are not wired up (even with mako's `actions=1`), so transfers hang
+silently waiting for an acceptance that never happens.
+
+### Per-device share config (run once after pairing each device)
+
+For each paired device, create a share plugin config at
+`~/.config/kdeconnect/<device_id>/kdeconnect_share/config` with an
+`incomingPath` so files auto-accept and save directly:
+
+```ini
+[General]
+incomingPath=/home/prophet/Downloads/kdeconnect/<DeviceName>
+```
+
+- `<device_id>` is the 32-char hex directory under `~/.config/kdeconnect/`
+  (find it with `ls ~/.config/kdeconnect/`).
+- Create the destination subfolder under `~/Downloads/kdeconnect/` first.
+- Restart `kdeconnectd` if it's already running so the config is re-read.
+- The `kcd` shell function (in `.aliases`) `cd`s into the active device's
+  sshfs mount under `/run/user/$(id -u)/<device_id>` for terminal file access.

@@ -55,6 +55,13 @@ yay -S sesh-bin
 curl -fsSL https://pkgs.netbird.io/install.sh | sh
 gh extension install dlvhdr/gh-dash
 
+## KDE Connect
+sudo pacman -S kdeconnect sshfs
+yay -S hypr-kdeconnect-fix-git
+sudo ufw allow 1714:1764/udp
+sudo ufw allow 1714:1764/tcp
+sudo ufw reload
+
 # # Configure Displayling
 # sudo pacman -Sy linux-headers # Might be necessary to replace with `linux-lts-headers`
 # yay -S evdi-dkms
