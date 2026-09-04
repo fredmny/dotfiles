@@ -3,6 +3,7 @@ require("lualine").setup({
 		icons_enabled = true,
 		theme = "dracula",
 	},
+	extensions = { "nvim-dap-ui" },
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = {'branch', 'diff', 'diagnostics'},
