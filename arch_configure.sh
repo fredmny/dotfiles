@@ -119,6 +119,21 @@ ln -s ${dotfiles_dir}/.zshrc $HOME/.zshrc
 mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh
 ln -s ${dotfiles_dir}/.ssh/config $HOME/.ssh/config
 
+# SSH agent (gcr-ssh-agent): systemd user unit that loads ssh keys and
+# stores passphrases in gnome-keyring. SSH_AUTH_SOCK is set by
+# .config/hypr/hyprland.lua to $XDG_RUNTIME_DIR/gcr/ssh.
+systemctl --user enable gcr-ssh-agent.socket
+
+cat <<'EOF'
+
+SSH setup — manual steps still required:
+  1. Copy your private key(s) into ~/.ssh/ (e.g. ~/.ssh/github).
+  2. After first login, store the passphrase once in the keyring:
+       SSH_ASKPASS=/usr/lib/gcr4-ssh-askpass ssh-add ~/.ssh/github < /dev/null
+     (check "remember" in the prompt)
+
+EOF
+
 
 # Change file permissions
 

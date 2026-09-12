@@ -114,8 +114,8 @@ export EDITOR='nvim'
 
 # ssh
 # The agent is managed by the session, not by zsh: launchd on macOS,
-# Hyprland's exec-once on Linux (see .config/hypr/hyprland.lua).
-# Key loading is handled by ~/.ssh/config (AddKeysToAgent / UseKeychain).
+# gcr-ssh-agent (systemd user unit) on Linux. SSH_AUTH_SOCK is set by
+# .config/hypr/hyprland.lua; passphrases are stored in gnome-keyring.
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
