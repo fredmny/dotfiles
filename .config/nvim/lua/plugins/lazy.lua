@@ -53,6 +53,14 @@ require("lazy").setup({
 		---@module 'render-markdown'
 		---@type render.md.UserConfig
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 	"nvim-lualine/lualine.nvim",
 	-- "ellisonleao/gruvbox.nvim",
 	"nvim-tree/nvim-web-devicons",
