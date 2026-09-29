@@ -184,6 +184,9 @@ if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)
 # . "$HOME/.local/bin/env"
 eval "$(mise activate zsh)"
 
+# fnox is installed via mise, so this must come after mise activation
+if command -v fnox >/dev/null 2>&1; then eval "$(fnox activate zsh)"; fi
+
 [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
 
 # zsh-vi-mode re-initializes keymaps at the first prompt, which wipes any
