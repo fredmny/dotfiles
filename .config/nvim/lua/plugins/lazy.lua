@@ -64,8 +64,12 @@ require("lazy").setup({
 	"nvim-lualine/lualine.nvim",
 	-- "ellisonleao/gruvbox.nvim",
 	"nvim-tree/nvim-web-devicons",
-	-- Diffview
-	"sindrets/diffview.nvim",
+	-- Diffview (maintained fork of sindrets/diffview.nvim, which has had no commits since 2024-08)
+	{
+		"dlyongemallo/diffview-plus.nvim",
+		version = "*",
+		cmd = { "DiffviewOpen", "DiffviewToggle", "DiffviewFileHistory", "DiffviewDiffFiles", "DiffviewLog" },
+	},
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
