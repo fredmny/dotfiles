@@ -133,7 +133,7 @@
 | `prefix + n` | Popup: Obsidian inbox note in `$EDITOR` |
 | `prefix + d` | Popup: Lazydocker |
 | `prefix + f` | Popup: Ranger file manager |
-| `prefix + P` | Popup: pick a `/tmp/pr-description-*` file with fzf and open it in nvim |
+| `prefix + P` | Popup: pick a `/tmp/pr-description-*` or `pr-drafts/` file with fzf and open it in nvim |
 | `prefix + F` | Popup: fuzzy-find any file under `~` (fd + fzf) and open it in nvim |
 | `M-s` | Choose session (no prefix) |
 | `M-f` | Fuzzy session switcher (no prefix) |
