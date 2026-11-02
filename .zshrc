@@ -204,3 +204,15 @@ else
   eval "$_hist_search_init"
 fi
 unset _hist_search_init
+
+# Start an agent session inside an Obsidian vault profile (ai-agent/profiles/<name>/)
+ai() {
+  [ -n "$1" ] || { echo "usage: ai <profile>"; return 1; }
+  local out vault dir
+  out=$(obsidian vault=obsidian_personal vault 2>&1)
+  vault=$(printf '%s\n' "$out" | awk -F'\t' '/^path\t/{print $2}')
+  [ -n "$vault" ] && [ -d "$vault/.obsidian" ] || { echo "Obsidian isn't reachable. Open it first."; return 1; }
+  dir="$vault/ai-agent/profiles/$1"
+  [ -f "$dir/AGENTS.md" ] || { echo "No profile '$1' in $vault/ai-agent/profiles"; return 1; }
+  (cd "$dir" && claude -n "$1")
+}
