@@ -204,6 +204,20 @@
 | `<leader>gp` | n | Preview git hunk |
 | `<leader>gtb` | n | Toggle inline git blame |
 
+### Diffview
+
+**File:** `lua/plugins/config/diffview.lua`
+
+| Keybind | Mode | Action |
+|---|---|---|
+| `<leader>gdd` | n | Toggle Diffview (working tree) |
+| `<leader>gds` | n | Diffview staged changes |
+| `<leader>gdm` | n | Diffview branch vs default branch (merge-base) |
+| `<leader>gdh` | n | Current file history |
+| `<leader>gdh` | v | History of selected lines |
+| `<leader>gdH` | n | Branch history |
+| `<leader>gdc` | n | Pick a commit (Telescope), diff from it to working tree |
+
 ### Telescope
 
 **File:** `lua/plugins/config/telescope.lua`
