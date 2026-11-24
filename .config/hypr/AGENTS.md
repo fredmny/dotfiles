@@ -20,36 +20,77 @@ calls `openrgb-wal.sh &` at the end.
 
 ### openrgb-wal.sh
 
-The ASUS Aura addressable controller (HID) does **not** reliably accept
-per-LED colour writes via the openrgb CLI.  The CLI's `-sp` saves all-zero
-colours.  Instead, the script **binary-patches** the profile file and loads it.
+The motherboard is driven with **one flat per-LED colour write**:
 
-**Template:** `~/.config/OpenRGB/profile_01.orp` (GUI-created, working Direct-mode
-structure).  Patched output: `~/.config/OpenRGB/pywal.orp`.
+```
+openrgb -d "ASUS" -m Direct -c c1,c2,...,cN
+```
 
-**Binary profile format** (`profile_01.orp` / `pywal.orp`):
-- Header: `OPENRGB_PROFILE`, then device/mode/zone metadata.
-- All 31 motherboard LEDs stored consecutively at offset `0x745`.
-- Per LED: 4 bytes `RR GG BB 00` (R, G, B, zero-padding).
-- Zone layout: 0=Aura Addr 1 (16 LEDs, idx 0–15), 1=Aura Addr 2 (8 LEDs,
-  idx 16–23), 2=Aura Addr 3 (7 LEDs, idx 24–30 — **left untouched**).
-- Mouse LEDs found by locating `Logo LED\x00` marker, then skipping
-  9 (name) + 4 (zone info) + 2 (count) bytes to reach colour data.  Same
-  `RR GG BB 00` format.
+Do **not** use `-z`/`-sz` or the profile loader for the motherboard:
+
+- `-z`/`-sz` resets the channel state and leaves the LEDs **off**.  `-sz` also
+  rewrites `Configuration.json`, which can wedge the controller until it is
+  reset (replug / power cycle).
+- The profile loader skips the mode block because the saved mode list (9
+  modes, from OpenRGB 1.0) no longer matches the live controller (19 modes in
+  1.1), so it never sets `Direct` mode.  It only copies colours and calls
+  `UpdateLEDs()`.
+
+The flat list must match the controller's LED count exactly, so the zone
+layout is read from the live device (`openrgb -sp __layout`) instead of being
+hardcoded.  The script falls back to `16,8,7` if the capture fails.
+
+**Mouse:** the G502 is exposed twice (wired HID++ interface + Lightspeed
+receiver).  `openrgb -d "Mouse" -m Direct -c <hex>` applies to every matching
+device, so both get the accent colour.
+
+**GPU (`Sapphire Radeon RX 9060 XT Nitro+`):** a single `GPU LED` in `Static`
+mode.  It is **not** stored in the profile: the Nitro Glow does not round-trip
+its colour bytes through profiles (each load/save rotates them, e.g.
+`0x123456` → `0x345612` → `0x563412`), so profile colours would drift.  The
+script sets it directly: `openrgb -d "Sapphire" -m Static -c <hex>`.  It reuses
+the mouse accent colour.  Its brightness register (`0x3E`) is never written by
+OpenRGB (the V3 controller exposes no brightness mode).
+
+**pywal.json:** the script also rewrites `profiles/pywal.json` from the live
+capture (current 19-mode list, correct zone sizes, GPU dropped) so the GUI
+autostart and `openrgb.service` cannot overwrite the direct write with last
+session's colours.
 
 **Colour pipeline:**
 1. Read `colors.json`, exclude `color0` (dark bg) and `color7` (fg).
 2. Deduplicate (pywal often copies color1→color9 etc.).
-3. `led_transform()` — push each colour into the LED sweet spot:
-   luminance 0.25–0.58, saturation ≥0.45 × 1.4.
-4. Sort by saturation descending, pick top 2 with maximally different hues.
-5. `circular_gradient()` — HSL interpolation (shortest hue path) over the
-   zone's LED count, wrapping A→B→A so the last LED neighbours the first.
-6. Mouse gets the single best colour (score = saturation×0.7 + luminance-bonus×0.3).
+3. Keep only **chromatic** entries (HLS saturation ≥ 0.20).  Near-greys have
+   an essentially arbitrary hue, so boosting them invents colours that are not
+   in the image — that is what made a monochrome wallpaper produce a rainbow.
+   If fewer than 2 survive, fall back to the full list.
+4. `led_transform()` — luminance into 0.30–0.60, saturation × 1.35.  No
+   saturation floor (see step 3).
+5. Pick A = best score (saturation×0.7 + luminance-bonus×0.3).  Pick B = the
+   chromatic colour with the best `saturation×0.6 + min(hue_dist, 0.30)×1.2`,
+   skipping hues closer than 0.04; if none qualifies, B = A (flat colour).
+6. `circular_gradient()` — **HSL** interpolation along the shortest hue path,
+   wrapping A→B→A so the last LED neighbours the first.  HSL keeps saturation
+   constant; RGB interpolation desaturates in the middle (pink→yellow via a
+   washed-out salmon), which is what made the gradient look pale.  The hue
+   distance cap in step 5 keeps the sweep inside the wallpaper's hues.
+7. Mouse and GPU get colour A.
 
-**Autostart:** `~/.config/autostart/OpenRGB.desktop` and
-`~/.config/OpenRGB/OpenRGB.json` (`AutoStart.profile` + `autoload_profiles`)
-all point to `pywal`, not `profile_01`.  OpenRGB loads `pywal.orp` at login
-(last session's colours), then `openrgb-wal.sh` updates it when the wallpaper
-rotates.
+**Autostart:** `~/.config/autostart/OpenRGB.desktop` and the user unit
+`~/.config/systemd/user/openrgb.service` both load the `pywal` profile at
+login.  `OpenRGB.json` → `ProfileManager` (`open_profile`, `resume_profile`,
+`service_startup_profile`) also points at `pywal`.  Note `OpenRGB.json` →
+`AutoStart` has **no** `profile` key, so the GUI itself does not load a profile
+from that path.
 
+### Debugging notes
+
+- `openrgb -sp <name>` in a **separate process** always reports the fresh
+  controller state (all-zero colours), not the hardware state.  To inspect
+  what a load actually did, load and save in the *same* invocation:
+  `openrgb -p pywal -sp after` then read `after.json`.
+- The GPU's I²C registers can be read directly: bus from
+  `openrgb -ld` (`/dev/i2c-6`), address `0x28`, `0x1A`/`0x1B`/`0x1C` = R/G/B,
+  `0x10` = mode (`0x06` = Static), `0x0F` = external control.
+- Two OpenRGB GUI instances (autostart + a manually launched one) both write
+  to the hardware and will fight each other.
