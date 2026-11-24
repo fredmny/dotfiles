@@ -1,8 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "@franlol/opencode-md-table-formatter@0.0.3"
-  ],
+  "providers": {
+    "openrouter": {
+      "settings": {
+        "cache": {
+          "ttl": "1h"
+        }
+      }
+    }
+  },
   "mcp": {
     "figma desktop remote": {
       "type": "remote",
