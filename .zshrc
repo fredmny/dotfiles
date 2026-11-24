@@ -216,3 +216,8 @@ ai() {
   [ -f "$dir/AGENTS.md" ] || { echo "No profile '$1' in $vault/ai-agent/profiles"; return 1; }
   (cd "$dir" && claude -n "$1")
 }
+# opencode
+export PATH=/home/prophet/.opencode/bin:$PATH
+
+# pi: keep prompt caches for 1h instead of the 5m default
+export PI_CACHE_RETENTION=long
